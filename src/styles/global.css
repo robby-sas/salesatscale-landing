@@ -20,6 +20,33 @@
   -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
 }
 
+/* Authority banner: smooth edge fade */
+.mask-edges {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+/* Pause marquee on hover */
+.marquee-container:hover .animate-scroll {
+  animation-play-state: paused;
+}
+
+/* Logo styling: grayscale, uniform height, hover color reveal */
+.logo-image {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.5;
+  filter: grayscale(100%) brightness(200%);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.logo-image:hover {
+  opacity: 1;
+  filter: grayscale(0%) brightness(100%);
+  transform: scale(1.05);
+}
+
 /* Inter Variable Font (local) */
 @font-face {
   font-family: "Inter";

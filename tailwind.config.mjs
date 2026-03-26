@@ -39,6 +39,7 @@ export default {
         "slide-up": "slideUp 0.8s ease-out forwards",
         blob: "blob 10s infinite alternate",
         "blob-delayed": "blob 12s infinite alternate-reverse",
+        scroll: "scroll 30s linear infinite",
       },
       keyframes: {
         fadeIn: { "0%": { opacity: "0" }, "100%": { opacity: "1" } },
@@ -47,6 +48,10 @@ export default {
         blob: {
           "0%": { transform: "translate(0px, 0px) scale(1)", opacity: "0.15" },
           "100%": { transform: "translate(30px, -50px) scale(1.1)", opacity: "0.25" },
+        },
+        scroll: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
         },
       },
     },
