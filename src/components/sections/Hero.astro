@@ -3,10 +3,40 @@ import { siteConfig } from "../../../site.config";
 const { cta } = siteConfig;
 ---
 
-<section class="relative h-screen bg-black pt-20 pb-6 overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-br from-navy/40 via-black to-black"></div>
+<section class="relative h-screen bg-[#050B14] pt-20 pb-6 overflow-hidden">
+  <!-- EXECUTIVE BACKGROUND -->
+  <div class="absolute inset-0 w-full h-full bg-[#050B14] z-0 overflow-hidden pointer-events-none">
+    <!-- Layer 1: Ambient Animated Glows -->
+    <div class="absolute inset-0 overflow-hidden z-0">
+      <div class="absolute -top-[20%] -right-[10%] w-[60%] h-[60%] rounded-full bg-[#003be0] blur-[120px] animate-blob"></div>
+      <div class="absolute top-[50%] -left-[20%] w-[50%] h-[50%] rounded-full bg-[#003be0] blur-[140px] animate-blob-delayed"></div>
+      <div class="absolute top-[20%] left-[20%] w-[40%] h-[40%] rounded-full bg-[#1E2A45] opacity-30 blur-[100px]"></div>
+    </div>
 
-  <div class="relative max-w-6xl mx-auto px-6 h-full">
+    <!-- Layer 2: Executive Grid -->
+    <div class="absolute inset-0 w-full h-full opacity-30 z-0 mask-vignette">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="executive-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+            <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#1E2A45" stroke-width="0.5"/>
+            <path d="M 24 22 L 24 26 M 22 24 L 26 24" fill="none" stroke="#003be0" stroke-width="1" opacity="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#executive-grid)" />
+      </svg>
+    </div>
+
+    <!-- Layer 3: Top Border Accent Line -->
+    <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#003be0] to-transparent opacity-50 z-10"></div>
+
+    <!-- Layer 4: Cinematic Noise/Grain Overlay -->
+    <div class="bg-noise z-10"></div>
+
+    <!-- Layer 5: Dark Fade to next section -->
+    <div class="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-[#050B14] to-transparent z-10"></div>
+  </div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6 h-full">
     <div class="flex flex-col items-center justify-start pt-14 md:pt-16 h-full gap-4 md:gap-5">
       <!-- Headline -->
       <div class="scroll-animate text-center w-full max-w-4xl">
@@ -37,7 +67,7 @@ const { cta } = siteConfig;
         </div>
       </div>
 
-      <!-- CTA — large, high-contrast, CRO-optimized -->
+      <!-- CTA -->
       <div class="scroll-animate">
         <a href={cta.primary.url} class="group inline-flex items-center gap-2 bg-blue hover:bg-blue-deep text-white font-chivo font-bold text-sm md:text-base tracking-[0.08em] uppercase px-12 md:px-16 py-4 md:py-5 rounded-full transition-all duration-300 shadow-lg shadow-blue/25 hover:shadow-blue/40 hover:scale-[1.02]">
           {cta.primary.text}

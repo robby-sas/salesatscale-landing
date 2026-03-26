@@ -22,11 +22,17 @@ export default {
         "fade-in": "fadeIn 0.6s ease-out forwards",
         "fade-in-up": "fadeInUp 0.7s ease-out forwards",
         "slide-up": "slideUp 0.8s ease-out forwards",
+        "blob": "blob 10s infinite alternate",
+        "blob-delayed": "blob 12s infinite alternate-reverse",
       },
       keyframes: {
         fadeIn: { "0%": { opacity: "0" }, "100%": { opacity: "1" } },
         fadeInUp: { "0%": { opacity: "0", transform: "translateY(24px)" }, "100%": { opacity: "1", transform: "translateY(0)" } },
         slideUp: { "0%": { opacity: "0", transform: "translateY(40px)" }, "100%": { opacity: "1", transform: "translateY(0)" } },
+        blob: {
+          "0%": { transform: "translate(0px, 0px) scale(1)", opacity: "0.15" },
+          "100%": { transform: "translate(30px, -50px) scale(1.1)", opacity: "0.25" },
+        },
       },
     },
   },
