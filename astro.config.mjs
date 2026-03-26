@@ -6,9 +6,9 @@ import vercel from "@astrojs/vercel/static";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://yourdomain.com",
+  site: "https://www.salesatscale.io",
   trailingSlash: "always",
   output: "static",
   adapter: vercel(),
-  integrations: [tailwind(), sitemap()],
+  integrations: [tailwind()],
 });
