@@ -1,0 +1,48 @@
+---
+const verticals = [
+  {
+    title: "Info Products",
+    description: "Scale course creators and coaching businesses to million-dollar months. We've worked with the biggest names in the industry, year after year.",
+    gradient: "from-blue-deep/30 to-navy/80",
+  },
+  {
+    title: "Investment Opportunities",
+    description: "We've mastered generating accredited investor leads for Firms, Funds, RIAs, Syndicates, Family Offices and Private Businesses looking to raise capital at scale.",
+    gradient: "from-champagne/15 to-charcoal/80",
+  },
+  {
+    title: "Service Providers",
+    description: "From wealth advisors and insurance providers to health & wellness companies, trading firms, and DFY businesses — we generate consistent qualified leads at scale.",
+    gradient: "from-blue/10 to-navy/60",
+  },
+];
+---
+
+<section class="bg-black py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="scroll-animate text-center mb-16">
+      <span class="font-jakarta font-semibold text-xs tracking-[0.18em] uppercase text-blue mb-4 block">Who We Help</span>
+      <h2 class="font-chivo font-black text-white text-4xl md:text-5xl tracking-[-0.03em] leading-[1]">
+        We Help High Ticket Product<br/>&amp; Service Businesses Scale
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
+      {verticals.map((v, i) => (
+        <div class="scroll-animate group relative bg-charcoal rounded-xl overflow-hidden border border-white/5 hover:border-blue/20 transition-all duration-300 hover:-translate-y-1">
+          <div class={`absolute inset-0 bg-gradient-to-b ${v.gradient} opacity-60`}></div>
+          <div class="relative p-7 flex flex-col min-h-[340px]">
+            <h3 class="font-chivo font-black text-white text-xl tracking-[-0.02em] mb-4">{v.title}</h3>
+            <p class="font-jakarta font-light text-silver text-sm leading-relaxed mb-6 flex-grow">{v.description}</p>
+            <div class="flex items-center justify-between">
+              <span class="font-jakarta text-xs text-muted uppercase tracking-[0.1em]">Learn more</span>
+              <div class="w-8 h-8 rounded-md border border-white/10 flex items-center justify-center group-hover:border-blue/40 group-hover:bg-blue/10 transition-all">
+                <svg class="w-3.5 h-3.5 text-muted group-hover:text-blue transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

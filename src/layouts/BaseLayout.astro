@@ -1,0 +1,79 @@
+---
+import BaseHead from "../components/seo/BaseHead.astro";
+import JsonLd from "../components/seo/JsonLd.astro";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+import CookieConsent from "../components/ui/CookieConsent.astro";
+import { siteConfig } from "../../site.config";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalUrl?: string;
+  type?: "website" | "article";
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  section?: string;
+  tags?: string[];
+  noindex?: boolean;
+}
+
+const props = Astro.props;
+const { analytics } = siteConfig;
+---
+
+<!doctype html>
+<html lang={siteConfig.site.language}>
+  <head>
+    <BaseHead {...props} />
+    <JsonLd organization={true} />
+  </head>
+  <body class="bg-black antialiased font-jakarta text-silver">
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <!-- GTM noscript -->
+    {analytics.gtmId && (
+      <noscript>
+        <iframe
+          src={`https://www.googletagmanager.com/ns.html?id=${analytics.gtmId}`}
+          height="0"
+          width="0"
+          style="display:none;visibility:hidden"
+        ></iframe>
+      </noscript>
+    )}
+
+    <Header />
+
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <Footer />
+    <CookieConsent />
+  </body>
+</html>
+
+<style>
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: var(--space-4);
+    padding: var(--space-2) var(--space-4);
+    background: var(--color-primary);
+    color: #ffffff;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    z-index: 100;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+</style>

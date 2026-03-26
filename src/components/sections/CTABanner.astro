@@ -1,0 +1,35 @@
+---
+import { siteConfig } from "../../../site.config";
+const { cta } = siteConfig;
+---
+
+<section class="bg-black py-12 px-6">
+  <div class="scroll-animate max-w-5xl mx-auto relative rounded-2xl overflow-hidden">
+    <!-- Gradient background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-charcoal via-navy to-blue-deep/40"></div>
+    <!-- Grid pattern overlay -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 40px 40px;"></div>
+    <!-- Decorative chess/abstract shapes -->
+    <div class="absolute right-0 top-0 w-1/2 h-full opacity-10">
+      <svg viewBox="0 0 400 300" class="w-full h-full" fill="none" preserveAspectRatio="xMaxYMid slice">
+        <circle cx="200" cy="80" r="60" stroke="white" stroke-width="0.5" opacity="0.5"/>
+        <circle cx="280" cy="150" r="40" stroke="white" stroke-width="0.5" opacity="0.3"/>
+        <circle cx="150" cy="200" r="50" stroke="white" stroke-width="0.5" opacity="0.4"/>
+        <line x1="100" y1="50" x2="350" y2="250" stroke="white" stroke-width="0.3" opacity="0.3"/>
+        <line x1="150" y1="30" x2="380" y2="220" stroke="white" stroke-width="0.3" opacity="0.2"/>
+      </svg>
+    </div>
+
+    <div class="relative px-10 py-16 md:px-16 md:py-20">
+      <h2 class="font-chivo font-black text-white text-3xl md:text-4xl lg:text-5xl tracking-[-0.03em] leading-[1.05] mb-5 max-w-lg">
+        Ready to Transform Your Sales Game?
+      </h2>
+      <p class="font-jakarta font-light text-silver text-base md:text-lg leading-relaxed mb-8 max-w-lg">
+        Stop settling for ordinary and dive into extraordinary with SalesAtScale. Click below and let's make your sales strategy the success story you know it can be.
+      </p>
+      <a href={cta.primary.url} class="inline-block bg-white hover:bg-offwhite text-navy font-chivo font-bold text-sm tracking-[0.05em] px-8 py-3.5 rounded-full transition-colors">
+        Get Started!
+      </a>
+    </div>
+  </div>
+</section>

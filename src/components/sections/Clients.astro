@@ -1,0 +1,42 @@
+---
+const clients = [
+  { name: "Josh Snow", image: "https://placehold.co/400x260/111827/003be0?text=Josh+Snow" },
+  { name: "Justin Saunders", image: "https://placehold.co/400x260/111827/003be0?text=Justin+Saunders" },
+  { name: "Rich Schefren", image: "https://placehold.co/400x260/111827/003be0?text=Rich+Schefren" },
+  { name: "Ben Kelly", image: "https://placehold.co/400x260/111827/003be0?text=Ben+Kelly" },
+  { name: "AJ Mizes", image: "https://placehold.co/400x260/111827/003be0?text=AJ+Mizes" },
+  { name: "Rohan Sheth", image: "https://placehold.co/400x260/111827/003be0?text=Rohan+Sheth" },
+];
+---
+
+<section class="bg-black pt-12 pb-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="scroll-animate mb-16">
+      <span class="font-jakarta font-semibold text-xs tracking-[0.18em] uppercase text-blue mb-4 block">Our Clients</span>
+      <h2 class="font-chivo font-black text-white text-4xl md:text-5xl tracking-[-0.03em] leading-[1]">
+        Meet Our Clients Who Use<br/>SalesAtScale.io
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {clients.map((client, i) => (
+        <div class="scroll-animate group relative bg-charcoal rounded-xl overflow-hidden border border-white/5 hover:border-blue/20 transition-all duration-300 hover:-translate-y-1">
+          <div class="aspect-[16/11] overflow-hidden">
+            <img
+              src={client.image}
+              alt={`${client.name} — SalesAtScale.io client`}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              width="400"
+              height="260"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="p-5 text-center border-t border-white/5">
+            <h3 class="font-chivo font-bold text-white text-lg tracking-[-0.01em]">{client.name}</h3>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

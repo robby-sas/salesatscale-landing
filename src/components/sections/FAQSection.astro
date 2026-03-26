@@ -1,0 +1,61 @@
+---
+const faqs = [
+  { q: "Is This Just Outsourced Sales?", a: "Not exactly. While we handle your sales operations, we integrate deeply with your brand, offer, and sales process. Our team operates as an extension of your company — trained on your specific model, language, and ideal customer profile." },
+  { q: "The Salespeople You Send Me... Do They Work For You Or Me?", a: "They work for us operationally, but they represent your brand exclusively. We handle recruiting, training, management, and performance tracking. You get the output without the HR burden." },
+  { q: "Do You Take A Percentage Of Sales?", a: "Our compensation model is performance-aligned, meaning we have skin in the game. The exact structure depends on your offer type, price point, and volume. We'll walk you through the details during your strategy call." },
+  { q: "Will You Train My Sales People?", a: "Absolutely. Whether you need us to train your existing team or build a new one from scratch, we customize our training to your specific offer, objection handling, and closing methodology." },
+  { q: "Can You Coach My Existing Sales Team?", a: "Yes. Our consulting arm works directly with existing sales teams to optimize scripts, improve close rates, refine follow-up sequences, and implement data-driven performance tracking." },
+  { q: "What If I'm Not Ready To Build A Sales Team Yet?", a: "Start with our consulting package. We'll help you refine your offer, build out your sales process, and get your leadflow optimized before scaling with a full team." },
+];
+---
+
+<section class="bg-black py-24">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="scroll-animate mb-12">
+      <span class="font-jakarta font-semibold text-xs tracking-[0.18em] uppercase text-blue mb-4 block">FAQ</span>
+      <h2 class="font-chivo font-black text-white text-3xl md:text-4xl tracking-[-0.03em] leading-[1.05]">
+        Elevate Your Sales with Top 1% Sales Talent
+      </h2>
+    </div>
+
+    <div class="space-y-3">
+      {faqs.map((faq, i) => (
+        <div class="scroll-animate faq-item bg-charcoal rounded-lg border border-white/5 overflow-hidden hover:border-white/10 transition-colors">
+          <button
+            class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left"
+            aria-expanded="false"
+          >
+            <span class="font-chivo font-bold text-white text-sm md:text-base pr-4">{faq.q}</span>
+            <svg class="faq-icon w-5 h-5 text-muted flex-shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12M6 12h12"/></svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-5">
+            <p class="font-jakarta font-light text-silver text-sm leading-relaxed">{faq.a}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const content = item?.querySelector('.faq-content');
+      const icon = item?.querySelector('.faq-icon');
+      const isOpen = !content?.classList.contains('hidden');
+
+      // Close all
+      document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+      document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-45'));
+      document.querySelectorAll('.faq-trigger').forEach(t => t.setAttribute('aria-expanded', 'false'));
+
+      // Open clicked (if was closed)
+      if (!isOpen) {
+        content?.classList.remove('hidden');
+        icon?.classList.add('rotate-45');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>

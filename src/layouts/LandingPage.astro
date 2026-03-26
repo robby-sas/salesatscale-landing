@@ -1,0 +1,20 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import JsonLd from "../components/seo/JsonLd.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  faqQuestions?: Array<{ question: string; answer: string }>;
+}
+
+const { title, description, image, faqQuestions } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} image={image}>
+  <slot />
+  {faqQuestions && faqQuestions.length > 0 && (
+    <JsonLd faq={faqQuestions} />
+  )}
+</BaseLayout>

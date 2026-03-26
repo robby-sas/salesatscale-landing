@@ -1,0 +1,108 @@
+---
+import { siteConfig } from "../../../site.config";
+const { nav, cta } = siteConfig;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50">
+  <nav class="max-w-6xl mx-auto mt-4 px-6 py-3 rounded-full bg-charcoal/80 backdrop-blur-xl border border-white/5">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 flex-shrink-0">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" class="text-blue">
+          <path d="M16 4l10 6v4l-10 6L6 14v-4l10-6z" fill="currentColor" opacity="0.3"/>
+          <path d="M16 10l10 6v4l-10 6L6 20v-4l10-6z" fill="currentColor" opacity="0.6"/>
+          <path d="M16 16l10 6v4l-10 6L6 26v-4l10-6z" fill="currentColor"/>
+        </svg>
+        <span class="font-chivo font-bold text-white text-sm tracking-wide">SalesAtScale.io</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden lg:flex items-center gap-8">
+        <!-- For Businesses Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 text-sm text-silver hover:text-white transition-colors font-jakarta font-medium">
+            {nav.forBusinesses.label}
+            <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="absolute top-full left-0 mt-3 w-52 bg-charcoal border border-white/10 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 -translate-y-2 group-hover:translate-y-0">
+            <div class="py-2">
+              {nav.forBusinesses.items.map((item) => (
+                <a href={item.href} class="block px-4 py-2.5 text-sm text-silver hover:text-white hover:bg-white/5 transition-colors font-jakarta">{item.label}</a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- For Sales Reps Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 text-sm text-silver hover:text-white transition-colors font-jakarta font-medium">
+            {nav.forReps.label}
+            <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="absolute top-full left-0 mt-3 w-52 bg-charcoal border border-white/10 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 -translate-y-2 group-hover:translate-y-0">
+            <div class="py-2">
+              {nav.forReps.items.map((item) => (
+                <a href={item.href} class="block px-4 py-2.5 text-sm text-silver hover:text-white hover:bg-white/5 transition-colors font-jakarta">{item.label}</a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Free Resources Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 text-sm text-silver hover:text-white transition-colors font-jakarta font-medium">
+            {nav.resources.label}
+            <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="absolute top-full left-0 mt-3 w-52 bg-charcoal border border-white/10 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 -translate-y-2 group-hover:translate-y-0">
+            <div class="py-2">
+              {nav.resources.items.map((item) => (
+                <a href={item.href} class="block px-4 py-2.5 text-sm text-silver hover:text-white hover:bg-white/5 transition-colors font-jakarta">{item.label}</a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <a href={cta.primary.url} class="bg-blue hover:bg-blue-deep text-white font-chivo font-bold text-xs tracking-[0.1em] uppercase px-6 py-2.5 rounded-full transition-colors">
+          {cta.primary.text}
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="lg:hidden text-white" aria-label="Open menu">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="lg:hidden hidden fixed inset-0 top-0 bg-black/95 backdrop-blur-xl z-50 p-6">
+    <div class="flex justify-end mb-8">
+      <button id="mobile-menu-close" class="text-white" aria-label="Close menu">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="flex flex-col gap-6">
+      <span class="text-xs text-muted uppercase tracking-[0.15em] font-jakarta font-semibold">For Businesses</span>
+      {nav.forBusinesses.items.map((item) => (
+        <a href={item.href} class="text-lg text-silver hover:text-white font-jakarta">{item.label}</a>
+      ))}
+      <span class="text-xs text-muted uppercase tracking-[0.15em] font-jakarta font-semibold mt-4">For Sales Reps</span>
+      {nav.forReps.items.map((item) => (
+        <a href={item.href} class="text-lg text-silver hover:text-white font-jakarta">{item.label}</a>
+      ))}
+      <a href={cta.primary.url} class="mt-6 bg-blue text-white font-chivo font-bold text-sm tracking-[0.1em] uppercase px-8 py-3 rounded-full text-center">
+        {cta.primary.text}
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const close = document.getElementById('mobile-menu-close');
+  btn?.addEventListener('click', () => menu?.classList.remove('hidden'));
+  close?.addEventListener('click', () => menu?.classList.add('hidden'));
+</script>

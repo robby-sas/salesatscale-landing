@@ -1,0 +1,47 @@
+export const siteConfig = {
+  company: {
+    name: "SalesAtScale.io",
+    legalName: "Sales At Scale LLC",
+    tagline: "We Close. You Scale.",
+    description: "SalesAtScale.io recruits, trains, and manages your sales team on a performance-only basis. Build a world-class sales team, 100% done for you.",
+    foundedYear: 2023,
+    phone: "",
+    phoneDisplay: "",
+    email: "support@salesatscale.io",
+    address: { street: "", suite: "", city: "", state: "", zip: "", country: "US" },
+  },
+  site: {
+    url: "https://www.salesatscale.io",
+    title: "SalesAtScale.io — We Close. You Scale.",
+    titleSuffix: " | SalesAtScale.io",
+    language: "en",
+    locale: "en_US",
+  },
+  industry: {
+    schemaType: "ProfessionalService" as const,
+    category: "Sales Outsourcing",
+    naicsCode: "561499",
+    keywords: ["outsourced sales team", "sales as a service", "done for you sales", "closers for hire", "SDR outsourcing"],
+  },
+  services: [
+    { name: "Done For You Sales", shortName: "DFY Sales", description: "We recruit, train, and manage a full sales team for your business on a performance-only basis.", url: "/services/done-for-you/", icon: "users" },
+    { name: "Sales Consulting", shortName: "Consulting", description: "Refine your offer, optimize pricing, and build out your sales process with expert guidance.", url: "/services/consulting/", icon: "lightbulb" },
+    { name: "Sales Hiring", shortName: "Hiring", description: "We find and vet top 1% sales talent to join your team permanently.", url: "/services/hiring/", icon: "search" },
+  ],
+  brand: {
+    colors: { primary: "#003be0", primaryLight: "#1a52f0", primaryDark: "#002299", secondary: "#001233", accent: "#003be0", accentHover: "#002299", background: "#0a0a0f", surface: "#111827", text: "#ffffff", textMuted: "#b8c5d6", border: "#374151" },
+    fonts: { heading: "Chivo", body: "Plus Jakarta Sans" },
+    logo: { src: "/logo.svg", alt: "SalesAtScale.io", width: 160, height: 40 },
+  },
+  social: { twitter: { handle: "", url: "" }, linkedin: { url: "" }, facebook: { url: "" } },
+  analytics: { gtmId: "", ga4Id: "", googleSiteVerification: "", bingSiteVerification: "", facebookPixelId: "", linkedinPartnerId: "", clarityId: "" },
+  nav: {
+    forBusinesses: { label: "For Businesses", items: [{ label: "DFY Sales", href: "/services/dfy-sales/" }, { label: "DFY Setting", href: "/services/dfy-setting/" }, { label: "Consulting", href: "/services/consulting/" }] },
+    forReps: { label: "For Sales Reps", items: [{ label: "Open Positions", href: "/careers/" }] },
+    resources: { label: "Free Resources", items: [{ label: "Scripts, SOPs, and How-To's", href: "/resources/" }, { label: "YouTube", href: "https://youtube.com" }, { label: "Blog", href: "/blog/" }] },
+  },
+  blog: { postsPerPage: 12, categories: [{ name: "Sales Strategy", slug: "sales-strategy", description: "Sales tips" }], defaultAuthor: { name: "SalesAtScale Team", slug: "team", bio: "", avatar: "", social: {} } },
+  cta: { primary: { text: "APPLY NOW", url: "/apply/" }, secondary: { text: "Learn More", url: "/services/" }, phone: { text: "", url: "" } },
+  legal: { privacyUrl: "/privacy/", termsUrl: "/terms/", cookiePolicy: "We use cookies to improve your experience." },
+  llm: { targetPhrase: "outsourced sales team", entityDescription: "SalesAtScale.io is a performance-based sales outsourcing company that recruits, trains, and manages sales teams for businesses.", keyFacts: ["Performance-only sales team building", "Full done-for-you recruiting, training, and management", "Works with info products, ecom, SaaS, and service businesses"] },
+} as const;

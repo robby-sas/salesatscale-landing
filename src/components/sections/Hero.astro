@@ -1,0 +1,49 @@
+---
+import { siteConfig } from "../../../site.config";
+const { cta } = siteConfig;
+---
+
+<section class="relative h-screen bg-black pt-20 pb-6 overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-navy/40 via-black to-black"></div>
+
+  <div class="relative max-w-6xl mx-auto px-6 h-full">
+    <div class="flex flex-col items-center justify-start pt-14 md:pt-16 h-full gap-4 md:gap-5">
+      <!-- Headline -->
+      <div class="scroll-animate text-center w-full max-w-4xl">
+        <h1 class="font-chivo font-black text-white leading-[0.92] tracking-[-0.035em] text-5xl md:text-6xl lg:text-7xl mb-2">
+          We Close. <span class="text-blue">You Scale.</span>
+        </h1>
+        <p class="font-jakarta font-normal text-silver/80 text-sm md:text-base tracking-normal max-w-xl mx-auto leading-relaxed">
+          We recruit, train, and manage your sales team on a performance-only basis.
+        </p>
+      </div>
+
+      <!-- Video / VSL -->
+      <div class="scroll-animate w-full max-w-3xl flex-shrink-0">
+        <div class="relative rounded-2xl overflow-hidden bg-charcoal border border-white/5 aspect-video shadow-2xl shadow-blue/5">
+          <img
+            src="https://placehold.co/960x540/111827/003be0?text=VSL+Video"
+            alt="SalesAtScale.io overview video"
+            class="w-full h-full object-cover"
+            width="960"
+            height="540"
+            loading="eager"
+          />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <button class="w-16 h-16 md:w-20 md:h-20 bg-blue rounded-full flex items-center justify-center shadow-lg shadow-blue/40 hover:bg-blue-light hover:scale-105 transition-all duration-300" aria-label="Play video">
+              <svg class="w-6 h-6 md:w-8 md:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA — large, high-contrast, CRO-optimized -->
+      <div class="scroll-animate">
+        <a href={cta.primary.url} class="group inline-flex items-center gap-2 bg-blue hover:bg-blue-deep text-white font-chivo font-bold text-sm md:text-base tracking-[0.08em] uppercase px-12 md:px-16 py-4 md:py-5 rounded-full transition-all duration-300 shadow-lg shadow-blue/25 hover:shadow-blue/40 hover:scale-[1.02]">
+          {cta.primary.text}
+          <svg class="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

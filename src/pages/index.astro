@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/sections/Hero.astro";
+import Clients from "../components/sections/Clients.astro";
+import WhoWeHelp from "../components/sections/WhoWeHelp.astro";
+import HowWeWork from "../components/sections/HowWeWork.astro";
+import CTABanner from "../components/sections/CTABanner.astro";
+import FAQSection from "../components/sections/FAQSection.astro";
+---
+
+<BaseLayout
+  title="SalesAtScale.io — We Close. You Scale."
+  description="SalesAtScale.io recruits, trains, and manages your sales team on a performance-only basis. Build a world-class sales team, 100% done for you."
+>
+  <Hero />
+  <Clients />
+  <WhoWeHelp />
+  <HowWeWork />
+  <CTABanner />
+  <FAQSection />
+</BaseLayout>
+
+<!-- Scroll animation observer -->
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  );
+  document.querySelectorAll('.scroll-animate').forEach((el) => observer.observe(el));
+</script>
+
+<style is:global>
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  .scroll-animate.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Stagger children */
+  .scroll-animate:nth-child(2) { transition-delay: 0.1s; }
+  .scroll-animate:nth-child(3) { transition-delay: 0.2s; }
+  .scroll-animate:nth-child(4) { transition-delay: 0.3s; }
+  .scroll-animate:nth-child(5) { transition-delay: 0.4s; }
+  .scroll-animate:nth-child(6) { transition-delay: 0.5s; }
+
+  /* Timeline line animation */
+  .timeline-line {
+    background: linear-gradient(to bottom, #003be0 0%, rgba(0,59,224,0.4) 60%, transparent 100%);
+  }
+</style>

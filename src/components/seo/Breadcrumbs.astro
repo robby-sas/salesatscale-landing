@@ -1,0 +1,61 @@
+---
+import JsonLd from "./JsonLd.astro";
+import { buildUrl } from "../../utils/seo";
+
+interface Props {
+  items: Array<{ name: string; url: string }>;
+}
+
+const { items } = Astro.props;
+const allItems = [{ name: "Home", url: buildUrl("/") }, ...items];
+---
+
+<nav aria-label="Breadcrumb" class="breadcrumbs">
+  <ol>
+    {allItems.map((item, index) => (
+      <li>
+        {index < allItems.length - 1 ? (
+          <a href={item.url}>{item.name}</a>
+        ) : (
+          <span aria-current="page">{item.name}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<JsonLd breadcrumb={allItems} />
+
+<style>
+  .breadcrumbs {
+    padding: var(--space-3) 0;
+    font-size: var(--text-sm);
+  }
+
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: var(--space-1);
+    align-items: center;
+  }
+
+  li:not(:last-child)::after {
+    content: "/";
+    margin-left: var(--space-1);
+    color: var(--color-text-muted);
+  }
+
+  a {
+    color: var(--color-text-muted);
+  }
+
+  a:hover {
+    color: var(--color-primary);
+  }
+
+  span[aria-current="page"] {
+    color: var(--color-text);
+    font-weight: 500;
+  }
+</style>

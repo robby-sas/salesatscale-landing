@@ -1,0 +1,243 @@
+---
+import { siteConfig } from "../../../site.config";
+import { buildUrl } from "../../utils/seo";
+
+interface Props {
+  organization?: boolean;
+  article?: {
+    headline: string;
+    description: string;
+    image?: string;
+    datePublished: string;
+    dateModified?: string;
+    author?: string;
+    section?: string;
+    tags?: string[];
+    url: string;
+  };
+  faq?: Array<{ question: string; answer: string }>;
+  breadcrumb?: Array<{ name: string; url: string }>;
+  person?: {
+    name: string;
+    bio: string;
+    avatar: string;
+    role: string;
+    url: string;
+  };
+  service?: {
+    name: string;
+    description: string;
+    url: string;
+  };
+  blog?: {
+    name: string;
+    description: string;
+    url: string;
+  };
+  howto?: {
+    name: string;
+    description: string;
+    steps: Array<{ name: string; text: string }>;
+  };
+  contact?: boolean;
+}
+
+const {
+  organization = false,
+  article,
+  faq,
+  breadcrumb,
+  person,
+  service,
+  blog,
+  howto,
+  contact = false,
+} = Astro.props;
+
+const { company, site, social, industry } = siteConfig;
+const schemas: object[] = [];
+
+// Organization Schema
+if (organization) {
+  schemas.push({
+    "@type": [industry.schemaType, "Organization"],
+    "@id": buildUrl("/") + "#organization",
+    name: company.name,
+    legalName: company.legalName,
+    description: company.description,
+    url: site.url,
+    logo: {
+      "@type": "ImageObject",
+      url: buildUrl("/logo.svg").replace(/\/$/, ""),
+    },
+    image: buildUrl("/og-default.jpg").replace(/\/$/, ""),
+    telephone: company.phone,
+    email: company.email,
+    foundingDate: String(company.foundedYear),
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: `${company.address.street}${company.address.suite ? ", " + company.address.suite : ""}`,
+      addressLocality: company.address.city,
+      addressRegion: company.address.state,
+      postalCode: company.address.zip,
+      addressCountry: company.address.country,
+    },
+    sameAs: [
+      social.twitter.url,
+      social.linkedin.url,
+      social.facebook.url,
+    ].filter(Boolean),
+  });
+}
+
+// Article Schema
+if (article) {
+  const authorName = article.author || siteConfig.blog.defaultAuthor.name;
+  schemas.push({
+    "@type": "Article",
+    headline: article.headline,
+    description: article.description,
+    image: article.image ? (article.image.startsWith("http") ? article.image : buildUrl(article.image).replace(/\/$/, "")) : undefined,
+    datePublished: article.datePublished,
+    dateModified: article.dateModified || article.datePublished,
+    author: {
+      "@type": "Person",
+      name: authorName,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: company.name,
+      logo: {
+        "@type": "ImageObject",
+        url: buildUrl("/logo.svg").replace(/\/$/, ""),
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": article.url,
+    },
+    articleSection: article.section,
+    keywords: article.tags?.join(", "),
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".article-summary"],
+    },
+  });
+}
+
+// FAQ Schema
+if (faq && faq.length > 0) {
+  schemas.push({
+    "@type": "FAQPage",
+    mainEntity: faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  });
+}
+
+// Breadcrumb Schema
+if (breadcrumb && breadcrumb.length > 0) {
+  schemas.push({
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumb.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  });
+}
+
+// Person Schema
+if (person) {
+  schemas.push({
+    "@type": "Person",
+    name: person.name,
+    description: person.bio,
+    image: person.avatar,
+    jobTitle: person.role,
+    url: person.url,
+    worksFor: {
+      "@type": "Organization",
+      name: company.name,
+    },
+  });
+}
+
+// Service Schema
+if (service) {
+  schemas.push({
+    "@type": "Service",
+    name: service.name,
+    description: service.description,
+    url: service.url,
+    provider: {
+      "@type": "Organization",
+      name: company.name,
+    },
+  });
+}
+
+// Blog Schema
+if (blog) {
+  schemas.push({
+    "@type": "Blog",
+    name: blog.name,
+    description: blog.description,
+    url: blog.url,
+    publisher: {
+      "@type": "Organization",
+      name: company.name,
+    },
+  });
+}
+
+// HowTo Schema
+if (howto) {
+  schemas.push({
+    "@type": "HowTo",
+    name: howto.name,
+    description: howto.description,
+    step: howto.steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+    })),
+  });
+}
+
+// ContactPage Schema
+if (contact) {
+  schemas.push({
+    "@type": "ContactPage",
+    name: `Contact ${company.name}`,
+    description: `Get in touch with ${company.name}. Call ${company.phoneDisplay} or email ${company.email}.`,
+    url: buildUrl("/contact/"),
+    mainEntity: {
+      "@type": "Organization",
+      name: company.name,
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: company.phone,
+        email: company.email,
+        contactType: "customer service",
+        availableLanguage: "English",
+      },
+    },
+  });
+}
+
+const jsonLdData = schemas.length === 1
+  ? { "@context": "https://schema.org", ...schemas[0] }
+  : { "@context": "https://schema.org", "@graph": schemas };
+---
+
+{schemas.length > 0 && (
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLdData)} />
+)}

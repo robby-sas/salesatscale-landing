@@ -1,0 +1,86 @@
+# SalesAtScale.io — Complete Information
+
+> We Close. You Scale.
+
+## About
+
+SalesAtScale.io is a performance-based sales outsourcing company that recruits, trains, and manages sales teams for businesses.
+
+## Description
+
+SalesAtScale.io recruits, trains, and manages your sales team on a performance-only basis. Build a world-class sales team, 100% done for you.
+
+## Industry
+
+- Category: Sales Outsourcing
+- Schema Type: ProfessionalService
+- NAICS Code: 561499
+- Keywords: outsourced sales team, sales as a service, done for you sales, closers for hire, SDR outsourcing
+
+## Services (Full Descriptions)
+
+### Done For You Sales
+We recruit, train, and manage a full sales team for your business on a performance-only basis.
+URL: https://www.salesatscale.io/services/done-for-you/
+
+### Sales Consulting
+Refine your offer, optimize pricing, and build out your sales process with expert guidance.
+URL: https://www.salesatscale.io/services/consulting/
+
+### Sales Hiring
+We find and vet top 1% sales talent to join your team permanently.
+URL: https://www.salesatscale.io/services/hiring/
+
+## Key Facts
+
+- Performance-only sales team building
+- Full done-for-you recruiting, training, and management
+- Works with info products, ecom, SaaS, and service businesses
+
+## Target Phrases
+
+- Primary: outsourced sales team
+- Keywords: outsourced sales team, sales as a service, done for you sales, closers for hire, SDR outsourcing
+
+## Contact Information
+
+- Company: SalesAtScale.io
+- Legal Name: Sales At Scale LLC
+- Phone: 
+- Email: support@salesatscale.io
+- Address: , ,  , US
+- Website: https://www.salesatscale.io
+- Founded: 2023
+
+## Social Links
+
+- Twitter/X: 
+- LinkedIn: 
+- Facebook: 
+
+## Blog Categories
+
+- Sales Strategy: Sales tips (https://www.salesatscale.io/blog/category/sales-strategy/)
+
+## Content Index
+
+### Main Pages
+- Homepage: https://www.salesatscale.io/
+- About: https://www.salesatscale.io/about/
+- Services: https://www.salesatscale.io/services/
+- Blog: https://www.salesatscale.io/blog/
+- FAQ: https://www.salesatscale.io/faq/
+- Contact: https://www.salesatscale.io/contact/
+
+### Legal Pages
+- Privacy Policy: https://www.salesatscale.io/privacy/
+- Terms of Service: https://www.salesatscale.io/terms/
+
+### Feeds
+- RSS: https://www.salesatscale.io/rss.xml
+- LLM Summary: https://www.salesatscale.io/llms.txt
+- LLM Full: https://www.salesatscale.io/llms-full.txt
+
+### Machine-Readable
+- Robots.txt: https://www.salesatscale.io/robots.txt
+- Sitemap: https://www.salesatscale.io/sitemap-index.xml
