@@ -9,27 +9,27 @@ const faqs = [
 ];
 ---
 
-<section class="bg-black py-24">
+<section class="bg-base py-24">
   <div class="max-w-3xl mx-auto px-6">
     <div class="scroll-animate mb-12">
       <span class="font-jakarta font-semibold text-xs tracking-[0.18em] uppercase text-blue mb-4 block">FAQ</span>
-      <h2 class="font-chivo font-black text-white text-3xl md:text-4xl tracking-[-0.03em] leading-[1.05]">
+      <h2 class="font-chivo font-black text-heading text-3xl md:text-4xl tracking-[-0.03em] leading-[1.05]">
         Elevate Your Sales with Top 1% Sales Talent
       </h2>
     </div>
 
     <div class="space-y-3">
       {faqs.map((faq, i) => (
-        <div class="scroll-animate faq-item bg-charcoal rounded-lg border border-white/5 overflow-hidden hover:border-white/10 transition-colors">
+        <div class="scroll-animate faq-item bg-card rounded-lg border border-card-border shadow-card overflow-hidden hover:border-blue/20 transition-colors">
           <button
             class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left"
             aria-expanded="false"
           >
-            <span class="font-chivo font-bold text-white text-sm md:text-base pr-4">{faq.q}</span>
-            <svg class="faq-icon w-5 h-5 text-muted flex-shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12M6 12h12"/></svg>
+            <span class="font-chivo font-bold text-heading text-sm md:text-base pr-4">{faq.q}</span>
+            <svg class="faq-icon w-5 h-5 text-body flex-shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12M6 12h12"/></svg>
           </button>
           <div class="faq-content hidden px-6 pb-5">
-            <p class="font-jakarta font-light text-silver text-sm leading-relaxed">{faq.a}</p>
+            <p class="font-jakarta font-light text-body text-sm leading-relaxed">{faq.a}</p>
           </div>
         </div>
       ))}
@@ -45,12 +45,10 @@ const faqs = [
       const icon = item?.querySelector('.faq-icon');
       const isOpen = !content?.classList.contains('hidden');
 
-      // Close all
       document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
       document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-45'));
       document.querySelectorAll('.faq-trigger').forEach(t => t.setAttribute('aria-expanded', 'false'));
 
-      // Open clicked (if was closed)
       if (!isOpen) {
         content?.classList.remove('hidden');
         icon?.classList.add('rotate-45');

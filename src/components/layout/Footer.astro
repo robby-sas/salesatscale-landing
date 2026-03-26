@@ -3,7 +3,7 @@ import { siteConfig } from "../../../site.config";
 const { company, nav, cta, legal } = siteConfig;
 ---
 
-<footer class="bg-black border-t border-white/5">
+<footer class="bg-surface border-t border-card-border">
   <div class="max-w-6xl mx-auto px-6 py-16">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
       <!-- Brand -->
@@ -14,45 +14,44 @@ const { company, nav, cta, legal } = siteConfig;
             <path d="M16 10l10 6v4l-10 6L6 20v-4l10-6z" fill="currentColor" opacity="0.6"/>
             <path d="M16 16l10 6v4l-10 6L6 26v-4l10-6z" fill="currentColor"/>
           </svg>
-          <span class="font-chivo font-bold text-white text-sm tracking-wide">SalesAtScale.io</span>
+          <span class="font-chivo font-bold text-heading text-sm tracking-wide">SalesAtScale.io</span>
         </a>
-        <p class="text-sm text-muted font-jakarta font-light leading-relaxed">
+        <p class="text-sm text-body font-jakarta font-light leading-relaxed">
           Helping companies sell their products/services at scale with a world-class sales team.
         </p>
       </div>
 
       <!-- Quick Links -->
       <div>
-        <h4 class="font-chivo font-bold text-white text-sm uppercase tracking-[0.1em] mb-6">Quick Links</h4>
+        <h4 class="font-chivo font-bold text-heading text-sm uppercase tracking-[0.1em] mb-6">Quick Links</h4>
         <ul class="space-y-3">
           {nav.forBusinesses.items.map((item) => (
-            <li><a href={item.href} class="text-sm text-muted hover:text-white transition-colors font-jakarta">{item.label}</a></li>
+            <li><a href={item.href} class="text-sm text-body hover:text-heading transition-colors font-jakarta">{item.label}</a></li>
           ))}
-          <li><a href="/faq/" class="text-sm text-muted hover:text-white transition-colors font-jakarta">FAQ</a></li>
+          <li><a href="/faq/" class="text-sm text-body hover:text-heading transition-colors font-jakarta">FAQ</a></li>
         </ul>
       </div>
 
       <!-- Contact -->
       <div>
-        <h4 class="font-chivo font-bold text-white text-sm uppercase tracking-[0.1em] mb-6">Contact Us</h4>
+        <h4 class="font-chivo font-bold text-heading text-sm uppercase tracking-[0.1em] mb-6">Contact Us</h4>
         <ul class="space-y-3">
           <li class="flex items-center gap-2">
             <svg class="w-4 h-4 text-blue flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            <a href={`mailto:${company.email}`} class="text-sm text-muted hover:text-white transition-colors font-jakarta">{company.email}</a>
+            <a href={`mailto:${company.email}`} class="text-sm text-body hover:text-heading transition-colors font-jakarta">{company.email}</a>
           </li>
         </ul>
       </div>
-
     </div>
   </div>
 
   <!-- Legal Bar -->
-  <div class="border-t border-white/5">
+  <div class="border-t border-card-border">
     <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-center gap-6">
-      <a href={legal.privacyUrl} class="text-xs text-muted hover:text-white transition-colors font-jakarta uppercase tracking-[0.1em]">Privacy Policy</a>
-      <a href={legal.termsUrl} class="text-xs text-muted hover:text-white transition-colors font-jakarta uppercase tracking-[0.1em]">Terms of Service</a>
-      <span class="text-xs text-muted font-jakarta uppercase tracking-[0.1em]">DMCA</span>
-      <span class="text-xs text-muted font-jakarta uppercase tracking-[0.1em]">Full Disclosure</span>
+      <a href={legal.privacyUrl} class="text-xs text-body hover:text-heading transition-colors font-jakarta uppercase tracking-[0.1em]">Privacy Policy</a>
+      <a href={legal.termsUrl} class="text-xs text-body hover:text-heading transition-colors font-jakarta uppercase tracking-[0.1em]">Terms of Service</a>
+      <span class="text-xs text-body font-jakarta uppercase tracking-[0.1em]">DMCA</span>
+      <span class="text-xs text-body font-jakarta uppercase tracking-[0.1em]">Full Disclosure</span>
     </div>
   </div>
 </footer>
