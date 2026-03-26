@@ -4,37 +4,23 @@ const { cta } = siteConfig;
 ---
 
 <section class="relative h-screen bg-base pt-20 pb-6 overflow-hidden">
-  <!-- EXECUTIVE BACKGROUND -->
-  <div class="absolute inset-0 w-full h-full bg-base z-0 overflow-hidden pointer-events-none">
-    <!-- Layer 1: Ambient Animated Glows -->
-    <div class="absolute inset-0 overflow-hidden z-0">
-      <div class="absolute -top-[20%] -right-[10%] w-[60%] h-[60%] rounded-full bg-[#003be0] blur-[120px] animate-blob"></div>
-      <div class="absolute top-[50%] -left-[20%] w-[50%] h-[50%] rounded-full bg-[#003be0] blur-[140px] animate-blob-delayed"></div>
-      <div class="absolute top-[20%] left-[20%] w-[40%] h-[40%] rounded-full bg-[#1E2A45] opacity-30 blur-[100px]"></div>
-    </div>
+  <!-- Canvas Background: Animated Grid with Routing Node -->
+  <canvas id="hero-canvas" class="absolute inset-0 w-full h-full z-0 pointer-events-none"></canvas>
 
-    <!-- Layer 2: Executive Grid -->
-    <div class="absolute inset-0 w-full h-full opacity-30 z-0 mask-vignette">
-      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="executive-grid" width="48" height="48" patternUnits="userSpaceOnUse">
-            <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#1E2A45" stroke-width="0.5"/>
-            <path d="M 24 22 L 24 26 M 22 24 L 26 24" fill="none" stroke="#003be0" stroke-width="1" opacity="0.5"/>
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#executive-grid)" />
-      </svg>
-    </div>
-
-    <!-- Layer 3: Top Border Accent Line -->
-    <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#003be0] to-transparent opacity-50 z-10"></div>
-
-    <!-- Layer 4: Cinematic Noise/Grain Overlay -->
-    <div class="bg-noise z-10"></div>
-
-    <!-- Layer 5: Dark Fade to next section -->
-    <div class="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-base to-transparent z-10"></div>
+  <!-- Layer: Ambient Glows (on top of canvas for depth) -->
+  <div class="absolute inset-0 z-[1] overflow-hidden pointer-events-none">
+    <div class="absolute -top-[20%] -right-[10%] w-[60%] h-[60%] rounded-full bg-[#003be0] blur-[120px] animate-blob opacity-20"></div>
+    <div class="absolute top-[50%] -left-[20%] w-[50%] h-[50%] rounded-full bg-[#003be0] blur-[140px] animate-blob-delayed opacity-15"></div>
   </div>
+
+  <!-- Layer: Top Border Accent Line -->
+  <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#003be0] to-transparent opacity-50 z-[2]"></div>
+
+  <!-- Layer: Noise Overlay -->
+  <div class="absolute inset-0 bg-noise z-[2] pointer-events-none"></div>
+
+  <!-- Layer: Dark Fade to next section -->
+  <div class="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-base to-transparent z-[2] pointer-events-none"></div>
 
   <div class="relative z-10 max-w-6xl mx-auto px-6 h-full">
     <div class="flex flex-col items-center justify-start pt-14 md:pt-16 h-full gap-4 md:gap-5">
@@ -51,7 +37,6 @@ const { cta } = siteConfig;
       <!-- Video / VSL -->
       <div class="scroll-animate w-full max-w-3xl flex-shrink-0">
         <div class="relative rounded-2xl overflow-hidden bg-card border border-card-border aspect-video shadow-card">
-          <!-- Subtle blue glow behind video -->
           <div class="absolute -inset-4 bg-blue-glow rounded-3xl blur-2xl -z-10"></div>
           <img
             src="https://placehold.co/960x540/1E293B/003be0?text=VSL+Video"
@@ -79,3 +64,131 @@ const { cta } = siteConfig;
     </div>
   </div>
 </section>
+
+<script>
+  function initHeroCanvas() {
+    const canvas = document.getElementById('hero-canvas') as HTMLCanvasElement;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let width: number, height: number;
+    function resize() {
+      width = canvas.width = canvas.offsetWidth;
+      height = canvas.height = canvas.offsetHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    const gridSize = 50;
+
+    let cCol = Math.floor((width / 2) / gridSize);
+    let cRow = Math.floor((height / 2) / gridSize);
+    let tCol = cCol;
+    let tRow = cRow;
+    const trail: { x: number; y: number }[] = [];
+
+    function pickNewTarget() {
+      const maxCol = Math.floor(width / gridSize);
+      const maxRow = Math.floor(height / gridSize);
+      tCol = Math.floor(Math.random() * maxCol);
+      tRow = Math.floor(Math.random() * maxRow);
+    }
+    pickNewTarget();
+
+    let animationFrameId: number;
+
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+
+      // 1. Draw Static Grid
+      ctx.beginPath();
+      ctx.strokeStyle = 'rgba(0, 59, 224, 0.10)';
+      ctx.lineWidth = 1;
+
+      for (let x = 0; x <= width + gridSize; x += gridSize) {
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, height);
+      }
+      for (let y = 0; y <= height + gridSize; y += gridSize) {
+        ctx.moveTo(0, y);
+        ctx.lineTo(width, y);
+      }
+      ctx.stroke();
+
+      // 2. Move Node (Manhattan Path)
+      const speed = 0.01;
+      if (Math.abs(tCol - cCol) > 0.01) {
+        cCol += Math.sign(tCol - cCol) * Math.min(speed, Math.abs(tCol - cCol));
+      } else if (Math.abs(tRow - cRow) > 0.01) {
+        cCol = tCol;
+        cRow += Math.sign(tRow - cRow) * Math.min(speed, Math.abs(tRow - cRow));
+      } else {
+        cCol = tCol;
+        cRow = tRow;
+        pickNewTarget();
+      }
+
+      let nodeX = cCol * gridSize;
+      let nodeY = cRow * gridSize;
+
+      // 3. Update and Draw Trail
+      trail.push({ x: nodeX, y: nodeY });
+      if (trail.length > 300) trail.shift();
+
+      if (trail.length > 1) {
+        for (let i = 1; i < trail.length; i++) {
+          ctx.beginPath();
+          ctx.moveTo(trail[i - 1].x, trail[i - 1].y);
+          ctx.lineTo(trail[i].x, trail[i].y);
+
+          let opacity = (i / trail.length) * 0.8;
+          ctx.strokeStyle = `rgba(0, 59, 224, ${opacity})`;
+          ctx.lineWidth = 2;
+
+          if (i > trail.length - 15) {
+            ctx.shadowColor = '#003BE0';
+            ctx.shadowBlur = 8;
+          } else {
+            ctx.shadowBlur = 0;
+          }
+          ctx.stroke();
+        }
+      }
+
+      // 4. Draw Glowing Node
+      ctx.shadowColor = '#003BE0';
+      ctx.shadowBlur = 25;
+      ctx.fillStyle = '#003BE0';
+      ctx.beginPath();
+      ctx.arc(nodeX, nodeY, 5, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = '#FFFFFF';
+      ctx.fillStyle = '#FFFFFF';
+      ctx.beginPath();
+      ctx.arc(nodeX, nodeY, 2.5, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.shadowBlur = 0;
+
+      animationFrameId = requestAnimationFrame(draw);
+    }
+    draw();
+
+    // Cleanup on page navigation
+    document.addEventListener('astro:before-swap', () => {
+      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('resize', resize);
+    }, { once: true });
+  }
+
+  // Init
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeroCanvas);
+  } else {
+    initHeroCanvas();
+  }
+  document.addEventListener('astro:page-load', initHeroCanvas);
+</script>
