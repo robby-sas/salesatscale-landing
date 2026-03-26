@@ -20,7 +20,7 @@ const clients = [
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       {clients.map((client, i) => (
-        <div class="scroll-animate group relative bg-card rounded-xl overflow-hidden border border-card-border shadow-card hover:border-blue/30 transition-all duration-300 hover:-translate-y-1">
+        <div class="scroll-animate group relative bg-card rounded-xl overflow-hidden border border-card-border border-t-2 border-t-blue shadow-card hover:shadow-[0_4px_20px_rgba(0,59,224,0.15)] transition-all duration-300 hover:-translate-y-1">
           <div class="aspect-[16/11] overflow-hidden">
             <img
               src={client.image}
