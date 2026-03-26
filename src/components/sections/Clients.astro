@@ -1,16 +1,18 @@
 ---
 const clients = [
-  { name: "Josh Snow", image: "https://placehold.co/400x260/1E293B/003be0?text=Josh+Snow" },
-  { name: "Justin Saunders", image: "https://placehold.co/400x260/1E293B/003be0?text=Justin+Saunders" },
-  { name: "Rich Schefren", image: "https://placehold.co/400x260/1E293B/003be0?text=Rich+Schefren" },
-  { name: "Ben Kelly", image: "https://placehold.co/400x260/1E293B/003be0?text=Ben+Kelly" },
-  { name: "AJ Mizes", image: "https://placehold.co/400x260/1E293B/003be0?text=AJ+Mizes" },
-  { name: "Rohan Sheth", image: "https://placehold.co/400x260/1E293B/003be0?text=Rohan+Sheth" },
+  { name: "Dean Graziosi", image: "https://placehold.co/600x375/111827/475569?text=Image+Slot" },
+  { name: "Frank Kern", image: "https://placehold.co/600x375/111827/475569?text=Image+Slot" },
+  { name: "Russ Ruffino", image: "https://placehold.co/600x375/111827/475569?text=Image+Slot" },
+  { name: "Todd Brown", image: "https://placehold.co/600x375/111827/475569?text=Image+Slot" },
+  { name: "Jay Abraham", image: "https://placehold.co/600x375/111827/475569?text=Image+Slot" },
+  { name: "Aleric Heck", image: "https://placehold.co/600x375/111827/475569?text=Image+Slot" },
+  { name: "Rich Schefren", image: "https://placehold.co/600x375/111827/475569?text=Image+Slot" },
+  { name: "Tanner Chidester", image: "https://placehold.co/600x375/111827/475569?text=Image+Slot" },
 ];
 ---
 
 <section class="bg-base pt-12 pb-24">
-  <div class="max-w-6xl mx-auto px-6">
+  <div class="max-w-7xl mx-auto px-6">
     <div class="scroll-animate mb-16">
       <span class="font-jakarta font-semibold text-xs tracking-[0.18em] uppercase text-blue mb-4 block">Our Clients</span>
       <h2 class="font-chivo font-black text-heading text-4xl md:text-5xl tracking-[-0.03em] leading-[1]">
@@ -18,22 +20,28 @@ const clients = [
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      {clients.map((client, i) => (
-        <div class="scroll-animate group relative bg-card rounded-xl overflow-hidden border border-card-border border-t-2 border-t-blue shadow-card hover:shadow-[0_4px_20px_rgba(0,59,224,0.15)] transition-all duration-300 hover:-translate-y-1">
-          <div class="aspect-[16/11] overflow-hidden">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 w-full">
+      {clients.map((client) => (
+        <div class="scroll-animate group relative bg-card rounded-lg overflow-hidden flex flex-col border border-card-border hover:border-blue/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+          <!-- Blue top accent on hover -->
+          <div class="absolute top-0 left-0 w-full h-1 bg-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+
+          <!-- Image -->
+          <div class="w-full bg-[#070A11] relative overflow-hidden" style="aspect-ratio: 16/10;">
             <img
               src={client.image}
               alt={`${client.name} — SalesAtScale.io client`}
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              width="400"
-              height="260"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              width="600"
+              height="375"
               loading="lazy"
               decoding="async"
             />
           </div>
-          <div class="p-5 text-center border-t border-card-border">
-            <h3 class="font-chivo font-bold text-heading text-lg tracking-[-0.01em]">{client.name}</h3>
+
+          <!-- Name Strip -->
+          <div class="py-4 bg-card flex justify-center items-center">
+            <span class="font-jakarta font-medium text-heading text-[15px] tracking-wide">{client.name}</span>
           </div>
         </div>
       ))}
