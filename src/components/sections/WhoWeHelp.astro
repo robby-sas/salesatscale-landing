@@ -12,11 +12,49 @@
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto items-stretch">
 
-      <!-- Card 1: Info Products -->
-      <div class="scroll-animate group relative bg-card rounded-2xl overflow-hidden border border-card-border shadow-card hover:border-blue/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_80px_rgba(0,0,0,0.7)]">
+      <!-- Card 1: Info Products (Custom SVG Card) -->
+      <div class="scroll-animate group relative bg-card rounded-2xl overflow-hidden border border-card-border flex flex-col transition-all duration-500 hover:border-blue hover:shadow-[0_20px_80px_rgba(0,0,0,0.7)] hover:-translate-y-1">
         <div class="absolute top-0 left-0 w-full h-1.5 bg-blue shadow-[0_0_15px_rgba(0,59,224,0.5)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-blue/10 to-transparent opacity-60"></div>
-        <div class="relative p-8 flex flex-col min-h-[420px]">
+
+        <!-- Technical Infrastructure SVG (Scaling Engine) -->
+        <div class="absolute inset-0 z-0 opacity-40 group-hover:opacity-65 transition-opacity duration-500 pointer-events-none">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,#1E293B_95%)] z-10 opacity-80"></div>
+          <svg viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+            <defs>
+              <pattern id="techGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#94A3B8" stroke-width="0.5" opacity="0.3"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#techGrid)" />
+            <g class="system-float">
+              <g stroke="#94A3B8" stroke-width="1.2" opacity="0.7">
+                <path d="M200 400 V100" stroke-dasharray="6 4" />
+                <path d="M120 250 H280" stroke-dasharray="4 2" />
+                <path d="M120 150 H280" stroke-dasharray="4 2" />
+                <path d="M200 400 V100" class="animate-flow-up" stroke="#003BE0" stroke-width="3" />
+                <path d="M120 250 V200 H280 V250" class="animate-flow-up" stroke="#003BE0" stroke-width="2" style="animation-delay: 0.5s" />
+              </g>
+              <circle cx="200" cy="100" r="7" fill="#003BE0" class="node-glow" />
+              <circle cx="120" cy="250" r="5" fill="#94A3B8" />
+              <circle cx="280" cy="250" r="5" fill="#94A3B8" />
+              <circle cx="120" cy="150" r="5" fill="#003BE0" class="node-glow" />
+              <circle cx="280" cy="150" r="5" fill="#003BE0" class="node-glow" />
+              <g class="engine-core">
+                <circle cx="200" cy="350" r="50" stroke="#003BE0" stroke-width="1.5" stroke-dasharray="8 4" />
+                <circle cx="200" cy="350" r="35" stroke="#003BE0" stroke-width="0.5" opacity="0.3" />
+                <rect x="188" y="338" width="24" height="24" fill="#003BE0" />
+                <rect x="194" y="344" width="12" height="12" fill="#F8FAFC" />
+              </g>
+            </g>
+            <g opacity="0.8">
+              <rect x="20" y="20" width="140" height="18" fill="rgba(0, 59, 224, 0.1)" stroke="#003BE0" stroke-width="0.5" />
+              <text x="28" y="32" fill="#F8FAFC" font-family="monospace" font-size="9" font-weight="bold">GROWTH_ENGINE_V3</text>
+              <text x="20" y="475" fill="#94A3B8" font-family="monospace" font-size="8">MOD: INFO_PROD_SCALE</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="relative z-20 p-8 flex flex-col min-h-[420px]">
           <h3 class="font-chivo font-black text-heading text-[34px] tracking-tight leading-[1.05] mb-5 uppercase drop-shadow-md">Info Products</h3>
           <p class="font-jakarta font-medium text-body text-[17px] leading-relaxed">
             Scale course creators and coaching businesses to million-dollar months. We've worked with the biggest names in the industry, year after year, getting massive results.
@@ -116,5 +154,21 @@
   }
   .node-glow {
     filter: drop-shadow(0 0 8px rgba(0, 59, 224, 0.9));
+  }
+  @keyframes flow-up {
+    from { stroke-dashoffset: 80; }
+    to { stroke-dashoffset: 0; }
+  }
+  .animate-flow-up {
+    stroke-dasharray: 12 24;
+    animation: flow-up 2s linear infinite;
+  }
+  @keyframes engine-pulse {
+    0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 59, 224, 0.6)); transform: scale(1); }
+    50% { filter: drop-shadow(0 0 25px rgba(0, 59, 224, 0.9)); transform: scale(1.08); }
+  }
+  .engine-core {
+    animation: engine-pulse 3s infinite ease-in-out;
+    transform-origin: 200px 350px;
   }
 </style>
