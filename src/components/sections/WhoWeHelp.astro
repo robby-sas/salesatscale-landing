@@ -112,11 +112,51 @@
         </div>
       </div>
 
-      <!-- Card 3: Service Providers -->
-      <div class="scroll-animate group relative bg-card rounded-2xl overflow-hidden border border-card-border shadow-card hover:border-blue/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_80px_rgba(0,0,0,0.7)]">
+      <!-- Card 3: Service Providers (Custom SVG Card) -->
+      <div class="scroll-animate group relative bg-card rounded-2xl overflow-hidden border border-card-border flex flex-col transition-all duration-500 hover:border-blue hover:shadow-[0_20px_80px_rgba(0,0,0,0.7)] hover:-translate-y-1">
         <div class="absolute top-0 left-0 w-full h-1.5 bg-blue shadow-[0_0_15px_rgba(0,59,224,0.5)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-blue-deep/15 to-transparent opacity-60"></div>
-        <div class="relative p-8 flex flex-col min-h-[420px]">
+
+        <!-- Sales Conversion SVG -->
+        <div class="absolute inset-0 z-0 opacity-45 group-hover:opacity-70 transition-opacity duration-500 pointer-events-none">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_15%,#1E293B_95%)] z-10 opacity-75"></div>
+          <svg viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+            <defs>
+              <pattern id="salesGrid" width="45" height="45" patternUnits="userSpaceOnUse">
+                <path d="M 45 0 L 0 0 0 45" fill="none" stroke="#94A3B8" stroke-width="0.5" opacity="0.3"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#salesGrid)" />
+            <g class="ops-float">
+              <g stroke="#94A3B8" stroke-width="1.2" opacity="0.6">
+                <path d="M40 100 L180 250" stroke-dasharray="4 4" />
+                <path d="M40 250 H180" stroke-dasharray="4 4" />
+                <path d="M40 400 L180 250" stroke-dasharray="4 4" />
+                <path d="M180 250 H340" stroke-dasharray="2 2" />
+                <path d="M40 100 L180 250" class="animate-conversion" stroke="#003BE0" stroke-width="2.5" />
+                <path d="M40 400 L180 250" class="animate-conversion" stroke="#003BE0" stroke-width="2.5" style="animation-delay: 0.5s" />
+                <path d="M180 250 H340" class="animate-conversion" stroke="#003BE0" stroke-width="4" style="animation-delay: 1s" />
+              </g>
+              <circle cx="40" cy="100" r="4" fill="#94A3B8" />
+              <circle cx="40" cy="250" r="4" fill="#94A3B8" />
+              <circle cx="40" cy="400" r="4" fill="#94A3B8" />
+              <g transform="translate(180, 250)">
+                <circle cx="0" cy="0" r="35" stroke="#003BE0" stroke-width="1" stroke-dasharray="6 3" />
+                <rect x="-15" y="-15" width="30" height="30" stroke="#003BE0" stroke-width="2" transform="rotate(45)" />
+              </g>
+              <g class="close-core">
+                <circle cx="340" cy="250" r="12" fill="#003BE0" class="node-glow" />
+                <circle cx="340" cy="250" r="6" fill="#F8FAFC" />
+                <path d="M310 250 H370 M340 220 V280" stroke="#003BE0" stroke-width="0.5" opacity="0.6" />
+              </g>
+            </g>
+            <g opacity="0.9">
+              <rect x="25" y="25" width="145" height="18" fill="rgba(0, 59, 224, 0.1)" stroke="#003BE0" stroke-width="0.5" />
+              <text x="33" y="37" fill="#F8FAFC" font-family="monospace" font-size="9" font-weight="bold">SALES_OPS_DEPLOYED</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="relative z-20 p-8 flex flex-col min-h-[420px]">
           <h3 class="font-chivo font-black text-heading text-[34px] tracking-tight leading-[1.05] mb-5 uppercase drop-shadow-md">Service Providers</h3>
           <p class="font-jakarta font-medium text-body text-[17px] leading-relaxed">
             From wealth advisors and insurance providers to health & wellness companies, trading firms, and DFY businesses — we generate consistent qualified leads at scale.
@@ -170,5 +210,28 @@
   .engine-core {
     animation: engine-pulse 3s infinite ease-in-out;
     transform-origin: 200px 350px;
+  }
+  @keyframes conversion {
+    from { stroke-dashoffset: 60; }
+    to { stroke-dashoffset: 0; }
+  }
+  .animate-conversion {
+    stroke-dasharray: 12 24;
+    animation: conversion 1.5s linear infinite;
+  }
+  @keyframes close-glow {
+    0%, 100% { filter: drop-shadow(0 0 12px rgba(0, 59, 224, 0.7)); transform: scale(1); }
+    50% { filter: drop-shadow(0 0 35px rgba(0, 59, 224, 1)); transform: scale(1.15); }
+  }
+  .close-core {
+    animation: close-glow 3s infinite ease-in-out;
+    transform-origin: 320px 250px;
+  }
+  @keyframes float-ops {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+  }
+  .ops-float {
+    animation: float-ops 8s infinite ease-in-out;
   }
 </style>
