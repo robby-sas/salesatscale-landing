@@ -20,16 +20,16 @@ const faqs = [
 
     <div class="space-y-3">
       {faqs.map((faq, i) => (
-        <div class="scroll-animate faq-item bg-card rounded-lg border border-card-border shadow-card overflow-hidden hover:border-blue/20 transition-colors">
+        <div class="scroll-animate faq-item rounded-lg overflow-hidden hover:border-[#003BE0]/20 transition-colors" style="background-color: #1E293B; border: 1px solid #334155; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.5);">
           <button
             class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left"
             aria-expanded="false"
           >
-            <span class="font-chivo font-bold text-heading text-sm md:text-base pr-4">{faq.q}</span>
-            <svg class="faq-icon w-5 h-5 text-body flex-shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12M6 12h12"/></svg>
+            <span class="font-chivo font-bold text-sm md:text-base pr-4" style="color: #F8FAFC;">{faq.q}</span>
+            <svg class="faq-icon w-5 h-5 flex-shrink-0 transition-transform duration-300" style="color: #94A3B8;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12M6 12h12"/></svg>
           </button>
           <div class="faq-content hidden px-6 pb-5">
-            <p class="font-jakarta font-light text-body text-sm leading-relaxed">{faq.a}</p>
+            <p class="font-jakarta font-light text-sm leading-relaxed" style="color: #94A3B8;">{faq.a}</p>
           </div>
         </div>
       ))}
