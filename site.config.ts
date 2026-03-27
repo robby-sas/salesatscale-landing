@@ -38,7 +38,7 @@ export const siteConfig = {
   nav: {
     forBusinesses: { label: "For Businesses", items: [{ label: "DFY Sales", href: "/services/dfy-sales/" }, { label: "DFY Setting", href: "/services/dfy-setting/" }, { label: "Consulting", href: "/services/consulting/" }] },
     forReps: { label: "For Sales Reps", items: [{ label: "Open Positions", href: "/careers/" }] },
-    resources: { label: "Free Resources", items: [{ label: "Scripts, SOPs, and How-To's", href: "/resources/" }, { label: "YouTube", href: "https://youtube.com" }, { label: "Blog", href: "/blog/" }] },
+    resources: { label: "Free Resources", items: [{ label: "Scripts & SOPs", href: "/resources/" }, { label: "YouTube", href: "https://youtube.com" }, { label: "Blog", href: "/blog/" }] },
   },
   blog: { postsPerPage: 12, categories: [{ name: "Sales Strategy", slug: "sales-strategy", description: "Sales tips" }], defaultAuthor: { name: "SalesAtScale Team", slug: "team", bio: "", avatar: "", social: {} } },
   cta: { primary: { text: "APPLY NOW", url: "/apply/" }, secondary: { text: "Learn More", url: "/services/" }, phone: { text: "", url: "" } },
