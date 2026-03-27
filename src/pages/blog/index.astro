@@ -1,0 +1,106 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const categories = [
+  { name: "All Research", count: 12, active: true },
+  { name: "Strategy", count: 7, active: false },
+  { name: "Recruiting & Hiring", count: 3, active: false },
+  { name: "Operations (SOPs)", count: 2, active: false },
+];
+
+const articles = [
+  {
+    category: "Strategy",
+    date: "Mar 20, 2026",
+    title: "What Is a Sales Infrastructure Assessment — And Why You Need One Before Hiring",
+    excerpt: "A Sales Infrastructure Assessment identifies every bottleneck in your funnel, calculates your estimated missed revenue, and maps scaling options — before you hire a single rep or SDR.",
+    cta: "Read Analysis",
+  },
+  {
+    category: "Recruiting",
+    date: "Mar 19, 2026",
+    title: "The Four B2B Sales Hiring Paths — Which Is Right for You?",
+    excerpt: "Four ways to scale your sales team: In-house recruiting, external headhunters, offshore agencies, or performance-managed teams. A side-by-side comparison with timelines and expected ROI.",
+    cta: "Read Analysis",
+  },
+  {
+    category: "Operations",
+    date: "Mar 15, 2026",
+    title: "Why Your SDRs Are Churning (And How to Fix It in 30 Days)",
+    excerpt: "High turnover isn't a \"generation\" problem — it's a systems problem. How we implement immediate feedback loops and specific compensation structures that retain top 1% talent long-term.",
+    cta: "Read Report",
+  },
+];
+---
+
+<BaseLayout
+  title="Market Intelligence — SalesAtScale.io Blog"
+  description="Sales infrastructure precedent, management frameworks, and strategic analysis for 7- and 8-figure scaling from SalesAtScale.io."
+>
+  <!-- Hero -->
+  <header class="w-full bg-base pt-32 pb-24 px-6 flex flex-col items-center justify-center text-center" style="border-bottom: 1px solid #334155;">
+    <div class="max-w-4xl mx-auto">
+      <span class="font-chivo font-bold tracking-[0.25em] uppercase text-xs md:text-sm mb-6 block text-blue">
+        Research & Insights
+      </span>
+      <h1 class="font-chivo font-black text-5xl md:text-7xl tracking-tight mb-8" style="color:#F8FAFC;">
+        Market Intelligence
+      </h1>
+      <p class="font-chivo font-medium text-[18px] md:text-[22px] leading-relaxed max-w-2xl mx-auto" style="color:#94A3B8;">
+        Sales infrastructure precedent, management frameworks, and strategic analysis for 7- and 8-figure scaling.
+      </p>
+    </div>
+  </header>
+
+  <!-- Content Layout -->
+  <main class="w-full max-w-[1400px] mx-auto px-6 md:px-12 py-16 flex flex-col md:flex-row gap-12 lg:gap-24 relative">
+
+    <!-- Left Sidebar: Topics -->
+    <aside class="w-full md:w-1/4 lg:w-1/5 shrink-0 md:sticky md:top-12 h-fit">
+      <h3 class="font-chivo text-xs font-bold uppercase tracking-[0.2em] mb-6 pb-4" style="color:#94A3B8; border-bottom: 1px solid #334155;">
+        Topics
+      </h3>
+      <ul class="flex flex-col">
+        {categories.map((cat) => (
+          <li>
+            <a href="#" class={`flex items-center justify-between py-3 font-chivo transition-colors group ${cat.active ? 'font-bold text-blue' : 'font-medium hover:text-blue'}`} style={cat.active ? '' : 'color:#F8FAFC;'}>
+              <span>{cat.name}</span>
+              <span class={`text-xs ${cat.active ? 'text-blue/70' : ''}`} style={cat.active ? '' : 'color:#94A3B8;'}>{cat.count}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </aside>
+
+    <!-- Right Feed: Articles -->
+    <div class="flex-grow flex flex-col w-full">
+      {articles.map((article, i) => (
+        <article class={`w-full py-12 flex flex-col md:grid md:grid-cols-4 gap-6 md:gap-12 group cursor-pointer ${i === 0 ? 'pt-0' : ''}`} style={i > 0 ? 'border-top: 1px solid #334155;' : ''}>
+          <div class="md:col-span-1 flex flex-col gap-1 md:pt-1">
+            <span class="font-chivo text-[11px] font-black uppercase tracking-[0.2em] text-blue">{article.category}</span>
+            <span class="font-chivo text-xs font-semibold uppercase tracking-wider" style="color:#94A3B8;">{article.date}</span>
+          </div>
+          <div class="md:col-span-3 flex flex-col">
+            <h2 class="font-chivo font-bold text-3xl md:text-4xl leading-[1.15] tracking-tight mb-5 group-hover:text-blue transition-colors duration-300" style="color:#F8FAFC;">
+              {article.title}
+            </h2>
+            <p class="font-chivo font-medium text-[17px] leading-relaxed mb-6" style="color:#94A3B8;">
+              {article.excerpt}
+            </p>
+            <div class="flex items-center gap-2 font-chivo text-xs font-black uppercase tracking-[0.15em] group-hover:text-blue transition-colors duration-300 mt-auto pt-2" style="color:#F8FAFC;">
+              {article.cta} <span class="text-lg leading-none group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </div>
+          </div>
+        </article>
+      ))}
+
+      <!-- Load More -->
+      <div class="w-full pt-8 flex justify-center md:justify-start md:pl-[25%] mt-4">
+        <button class="px-8 py-3 bg-transparent font-chivo font-bold text-sm tracking-wider uppercase rounded-md hover:text-blue transition-all duration-300 flex items-center gap-3 group" style="border: 1px solid #334155; color:#F8FAFC;">
+          Load More Insights
+          <svg class="w-4 h-4 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </button>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
