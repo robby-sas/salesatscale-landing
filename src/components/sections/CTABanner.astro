@@ -4,32 +4,82 @@ const { cta } = siteConfig;
 ---
 
 <section class="bg-surface py-12 px-6">
-  <div class="scroll-animate max-w-5xl mx-auto relative rounded-2xl overflow-hidden border border-card-border shadow-card">
-    <!-- Gradient background -->
-    <div class="absolute inset-0 bg-gradient-to-br from-card via-surface to-blue-deep/40"></div>
-    <!-- Grid pattern overlay -->
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 40px 40px;"></div>
-    <!-- Decorative shapes -->
-    <div class="absolute right-0 top-0 w-1/2 h-full opacity-10">
-      <svg viewBox="0 0 400 300" class="w-full h-full" fill="none" preserveAspectRatio="xMaxYMid slice">
-        <circle cx="200" cy="80" r="60" stroke="white" stroke-width="0.5" opacity="0.5"/>
-        <circle cx="280" cy="150" r="40" stroke="white" stroke-width="0.5" opacity="0.3"/>
-        <circle cx="150" cy="200" r="50" stroke="white" stroke-width="0.5" opacity="0.4"/>
-        <line x1="100" y1="50" x2="350" y2="250" stroke="white" stroke-width="0.3" opacity="0.3"/>
-        <line x1="150" y1="30" x2="380" y2="220" stroke="white" stroke-width="0.3" opacity="0.2"/>
-      </svg>
+  <div class="scroll-animate relative w-full max-w-5xl mx-auto rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row items-center p-8 md:p-16" style="background: linear-gradient(to bottom right, #111827, #0B0F19); border: 1px solid rgba(51,65,85,0.6); box-shadow: 0 20px 80px rgba(0,0,0,0.5);">
+
+    <!-- Abstract Background Layer -->
+    <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden" style="background-image: linear-gradient(to right, rgba(0,59,224,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,59,224,0.05) 1px, transparent 1px); background-size: 30px 30px;">
+      <!-- Gradient mask for text readability -->
+      <div class="absolute inset-0 z-10" style="background: linear-gradient(to right, #111827, rgba(17,24,39,0.9), transparent);"></div>
+      <!-- Blue ambient glow -->
+      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue/20 rounded-full blur-[100px] z-0"></div>
+
+      <!-- Floating UI: Revenue Chart -->
+      <div class="absolute right-[-2%] top-[10%] w-72 backdrop-blur-md rounded-xl p-5 shadow-2xl cta-float-slow z-0 opacity-80" style="background: rgba(30,41,59,0.3); border: 1px solid rgba(51,65,85,0.4); transform: rotate(12deg);">
+        <div class="flex justify-between items-center mb-4">
+          <span class="font-chivo text-xs font-semibold uppercase tracking-wider" style="color:#94A3B8;">Gross Volume</span>
+          <span class="font-chivo text-xs font-bold px-2 py-1 rounded" style="color:#10B981; background:rgba(16,185,129,0.1);">+24.5%</span>
+        </div>
+        <div class="font-chivo font-black text-2xl mb-2" style="color:#F8FAFC;">$154,290.00</div>
+        <svg class="w-full h-12" viewBox="0 0 100 30" fill="none" stroke="#10B981" stroke-width="2" style="filter: drop-shadow(0 0 8px rgba(16,185,129,0.5));">
+          <path d="M0 25 Q 10 25, 20 15 T 40 20 T 60 10 T 80 15 T 100 2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M0 25 Q 10 25, 20 15 T 40 20 T 60 10 T 80 15 T 100 2 L 100 30 L 0 30 Z" fill="url(#cta-grad)" stroke="none" opacity="0.2"/>
+          <defs>
+            <linearGradient id="cta-grad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#10B981" />
+              <stop offset="100%" stop-color="transparent" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <!-- Floating UI: Payment Notification -->
+      <div class="absolute right-[15%] bottom-[15%] w-64 backdrop-blur-md rounded-xl p-4 shadow-2xl cta-float-delayed z-0 opacity-70" style="background: rgba(30,41,59,0.4); border: 1px solid rgba(51,65,85,0.5); transform: rotate(-5deg);">
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background:rgba(0,59,224,0.2); border:1px solid rgba(0,59,224,0.3);">
+            <svg class="w-5 h-5 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-chivo font-bold text-sm" style="color:#F8FAFC;">Payment Received</span>
+            <span class="font-chivo font-black text-lg" style="color:#10B981;">+$9,800.00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating UI: Mini Bar Chart -->
+      <div class="absolute right-[25%] top-[50%] w-48 backdrop-blur-md rounded-xl p-4 shadow-2xl cta-float-fast z-0 opacity-50" style="background: rgba(30,41,59,0.2); border: 1px solid rgba(51,65,85,0.3); transform: rotate(8deg);">
+        <div class="flex items-end justify-between h-16 gap-2">
+          <div class="w-full rounded-t-sm h-[40%]" style="background:rgba(0,59,224,0.3);"></div>
+          <div class="w-full rounded-t-sm h-[60%]" style="background:rgba(0,59,224,0.5);"></div>
+          <div class="w-full rounded-t-sm h-[85%]" style="background:rgba(0,59,224,0.7);"></div>
+          <div class="w-full rounded-t-sm h-[100%] bg-blue" style="filter:drop-shadow(0 0 8px rgba(0,59,224,0.6));"></div>
+        </div>
+        <div class="mt-2 font-chivo text-[10px] font-bold uppercase tracking-widest text-center" style="color:#94A3B8;">Close Rate</div>
+      </div>
     </div>
 
-    <div class="relative px-10 py-16 md:px-16 md:py-20">
-      <h2 class="font-chivo font-black text-heading text-3xl md:text-4xl lg:text-5xl tracking-[-0.03em] leading-[1.05] mb-5 max-w-lg">
-        Ready to Transform Your Sales Game?
+    <!-- Content -->
+    <div class="relative z-20 w-full md:w-[65%] flex flex-col items-start text-left">
+      <h2 class="font-chivo font-black text-4xl md:text-5xl lg:text-[56px] leading-[1.05] tracking-tight mb-6 drop-shadow-md" style="color:#F8FAFC;">
+        Ready to Transform <br class="hidden sm:block" />Your Sales Game?
       </h2>
-      <p class="font-jakarta font-light text-body text-base md:text-lg leading-relaxed mb-8 max-w-lg">
+      <p class="font-chivo font-medium text-[18px] md:text-[20px] leading-relaxed mb-10 max-w-xl" style="color:#94A3B8;">
         Stop settling for ordinary and dive into extraordinary with SalesAtScale. Click below and let's make your sales strategy the success story you know it can be.
       </p>
-      <a href={cta.primary.url} class="inline-block bg-heading hover:bg-offwhite text-base font-chivo font-bold text-sm tracking-[0.05em] px-8 py-3.5 rounded-full transition-colors">
+      <a href={cta.primary.url} class="group px-10 py-4 font-chivo font-black text-lg rounded-full flex items-center gap-2 transition-all hover:-translate-y-1" style="background:#F8FAFC; color:#0B0F19; box-shadow: 0 0 20px rgba(248,250,252,0.2);">
         Get Started!
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
       </a>
     </div>
+
   </div>
 </section>
+
+<style>
+  @keyframes cta-float {
+    0%, 100% { transform: translateY(0) rotate(var(--r)); }
+    50% { transform: translateY(-15px) rotate(var(--r)); }
+  }
+  .cta-float-slow { --r: 12deg; animation: cta-float 8s ease-in-out infinite; }
+  .cta-float-delayed { --r: -5deg; animation: cta-float 10s ease-in-out infinite 2s; }
+  .cta-float-fast { --r: 8deg; animation: cta-float 6s ease-in-out infinite 1s; }
+</style>
