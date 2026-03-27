@@ -32,33 +32,33 @@ const testimonials = [
 ---
 
 <section class="bg-surface py-24 overflow-x-hidden">
-  <div class="w-full max-w-screen-2xl mx-auto flex flex-col">
+  <div class="w-full flex flex-col">
 
     <!-- Header & Navigation -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 max-w-7xl mx-auto w-full px-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 max-w-7xl mx-auto w-full px-6 lg:px-8">
       <div class="max-w-2xl">
         <span class="font-chivo font-bold tracking-[0.2em] uppercase text-sm mb-4 block text-blue">Proven Results</span>
-        <h2 class="font-chivo font-black text-heading text-[40px] md:text-[50px] leading-[1.05] tracking-tight uppercase mb-4 drop-shadow-md">
+        <h2 class="font-chivo font-black text-[40px] md:text-[50px] leading-[1.05] tracking-tight uppercase mb-4 drop-shadow-md" style="color:#F8FAFC;">
           Don't Just Take <br/>Our Word For It.
         </h2>
-        <p class="font-chivo font-medium text-body text-[18px] leading-relaxed">
+        <p class="font-chivo font-medium text-[18px] leading-relaxed" style="color:#94A3B8;">
           Hear directly from the founders who stopped settling for ordinary sales teams and partnered with SalesAtScale.
         </p>
       </div>
 
       <!-- Desktop Carousel Controls -->
-      <div class="hidden md:flex items-center gap-4 pb-2">
-        <button id="proof-left" class="w-12 h-12 rounded-full border border-card-border bg-card flex items-center justify-center hover:bg-blue hover:border-blue hover:shadow-btn-glow transition-all duration-300 group" style="color:#F8FAFC;" aria-label="Scroll left">
+      <div class="hidden md:flex items-center gap-4 pb-2 shrink-0">
+        <button id="proof-left" class="w-12 h-12 rounded-full border bg-card flex items-center justify-center hover:bg-blue hover:border-blue hover:shadow-btn-glow transition-all duration-300 group" style="border-color:#334155; color:#F8FAFC;" aria-label="Scroll left">
           <svg class="w-6 h-6 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
         </button>
-        <button id="proof-right" class="w-12 h-12 rounded-full border border-card-border bg-card flex items-center justify-center hover:bg-blue hover:border-blue hover:shadow-btn-glow transition-all duration-300 group" style="color:#F8FAFC;" aria-label="Scroll right">
+        <button id="proof-right" class="w-12 h-12 rounded-full border bg-card flex items-center justify-center hover:bg-blue hover:border-blue hover:shadow-btn-glow transition-all duration-300 group" style="border-color:#334155; color:#F8FAFC;" aria-label="Scroll right">
           <svg class="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
         </button>
       </div>
     </div>
 
     <!-- Mobile Swipe Indicator -->
-    <div class="flex md:hidden justify-center items-center gap-2 mb-6 text-body text-sm px-4">
+    <div class="flex md:hidden justify-center items-center gap-2 mb-6 text-sm px-6" style="color:#94A3B8;">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
       <span>Swipe to see more</span>
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
@@ -66,12 +66,15 @@ const testimonials = [
 
     <!-- Slider -->
     <div class="relative w-full">
-      <div class="hidden lg:block absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none"></div>
-      <div class="hidden lg:block absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none"></div>
+      <!-- Edge fades — left fade matches dynamic padding width -->
+      <div class="hidden lg:block absolute top-0 left-0 h-full z-10 pointer-events-none bg-gradient-to-r from-surface to-transparent" style="width: max(2rem, calc((100% - 80rem) / 2));"></div>
+      <div class="hidden lg:block absolute top-0 right-0 w-32 h-full z-10 pointer-events-none bg-gradient-to-l from-surface to-transparent"></div>
 
-      <div id="proof-slider" class="flex overflow-x-auto gap-6 sm:gap-8 pb-12 pt-4 px-4 lg:px-32 snap-x snap-mandatory no-scrollbar scroll-smooth">
+      <!-- Dynamic left padding aligns cards with max-w-7xl header -->
+      <div id="proof-slider" class="flex overflow-x-auto gap-6 sm:gap-8 pb-12 pt-4 pr-6 lg:pr-8 snap-x snap-mandatory no-scrollbar scroll-smooth" style="padding-left: max(1.5rem, calc((100% - 80rem) / 2 + 2rem)); scroll-padding-left: max(1.5rem, calc((100% - 80rem) / 2 + 2rem));">
+
         {testimonials.map((t) => (
-          <div class="shrink-0 w-[85vw] sm:w-[420px] snap-center group bg-card rounded-2xl overflow-hidden border border-card-border transition-all duration-400 hover:-translate-y-2 hover:border-blue/60 hover:shadow-[0_20px_50px_rgba(0,0,0,0.6)] flex flex-col cursor-pointer">
+          <div class="shrink-0 w-[85vw] sm:w-[420px] snap-start group rounded-2xl overflow-hidden transition-all duration-400 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.6)] flex flex-col cursor-pointer" style="background:#1E293B; border:1px solid #334155;">
             <!-- Video Thumbnail -->
             <div class="relative w-full aspect-video overflow-hidden" style="background:#070A11;">
               <div class="absolute inset-0 bg-blue/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
@@ -91,12 +94,12 @@ const testimonials = [
                 "{t.quote}"
               </p>
               <div class="flex items-center gap-4 mt-auto">
-                <div class="w-12 h-12 rounded-full border border-card-border overflow-hidden shrink-0">
+                <div class="w-12 h-12 rounded-full overflow-hidden shrink-0" style="border:1px solid #334155;">
                   <img src={`https://placehold.co/100x100/334155/F8FAFC?text=${t.initials}`} alt={t.name} class="w-full h-full object-cover" width="100" height="100" loading="lazy" />
                 </div>
                 <div>
                   <div class="font-chivo font-bold text-[15px]" style="color:#F8FAFC;">{t.name}</div>
-                  <div class="font-chivo font-medium text-sm text-body">{t.role}</div>
+                  <div class="font-chivo font-medium text-sm" style="color:#94A3B8;">{t.role}</div>
                 </div>
               </div>
             </div>
@@ -106,10 +109,10 @@ const testimonials = [
     </div>
 
     <!-- CTA -->
-    <div class="mt-8 md:mt-16 flex justify-center px-4 w-full relative z-20">
-      <a href="/apply/" class="group inline-flex items-center gap-2 bg-blue hover:bg-blue-hover text-white font-chivo font-bold text-sm md:text-base tracking-[0.08em] uppercase px-12 md:px-16 py-4 md:py-5 rounded-full transition-all duration-300 shadow-btn-glow hover:shadow-btn-glow-hover hover:scale-[1.02]">
+    <div class="mt-8 md:mt-16 flex justify-center px-6 w-full relative z-20">
+      <a href="/apply/" class="group inline-flex items-center gap-2 bg-blue hover:bg-blue-hover text-white font-chivo font-bold text-sm md:text-lg tracking-[0.1em] uppercase px-10 py-5 rounded-md transition-all duration-300 shadow-btn-glow hover:shadow-btn-glow-hover hover:-translate-y-1">
         See If You Qualify
-        <svg class="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        <svg class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
       </a>
     </div>
   </div>
