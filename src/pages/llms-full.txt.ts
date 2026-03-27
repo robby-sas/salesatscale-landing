@@ -2,7 +2,7 @@ import type { APIRoute } from "astro";
 import { siteConfig } from "../../site.config";
 
 export const GET: APIRoute = () => {
-  const { company, site, services, llm, social, blog, industry, legal } = siteConfig;
+  const { company, site, services, llm, social, blog, industry } = siteConfig;
 
   const content = `# ${company.name} — Complete Information
 
@@ -40,9 +40,7 @@ ${llm.keyFacts.map((f) => `- ${f}`).join("\n")}
 
 - Company: ${company.name}
 - Legal Name: ${company.legalName}
-- Phone: ${company.phoneDisplay}
 - Email: ${company.email}
-- Address: ${company.address.street}${company.address.suite ? ", " + company.address.suite : ""}, ${company.address.city}, ${company.address.state} ${company.address.zip}, ${company.address.country}
 - Website: ${site.url}
 - Founded: ${company.foundedYear}
 
@@ -60,15 +58,10 @@ ${blog.categories.map((c) => `- ${c.name}: ${c.description} (${site.url}/blog/ca
 
 ### Main Pages
 - Homepage: ${site.url}/
-- About: ${site.url}/about/
-- Services: ${site.url}/services/
+- Done-For-You Sales: ${site.url}/services/dfy-sales/
+- Careers: ${site.url}/careers/
 - Blog: ${site.url}/blog/
-- FAQ: ${site.url}/faq/
-- Contact: ${site.url}/contact/
-
-### Legal Pages
-- Privacy Policy: ${site.url}${legal.privacyUrl}
-- Terms of Service: ${site.url}${legal.termsUrl}
+- Case Studies: ${site.url}/case-studies/
 
 ### Feeds
 - RSS: ${site.url}/rss.xml

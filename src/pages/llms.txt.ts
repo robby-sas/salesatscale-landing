@@ -26,21 +26,16 @@ ${llm.keyFacts.map((f) => `- ${f}`).join("\n")}
 
 ## Contact
 
-- Phone: ${company.phoneDisplay}
 - Email: ${company.email}
-- Address: ${company.address.street}${company.address.suite ? ", " + company.address.suite : ""}, ${company.address.city}, ${company.address.state} ${company.address.zip}
 - Website: ${site.url}
 
 ## Content Index
 
 - Homepage: ${site.url}/
-- About: ${site.url}/about/
-- Services: ${site.url}/services/
+- Done-For-You Sales: ${site.url}/services/dfy-sales/
+- Careers: ${site.url}/careers/
 - Blog: ${site.url}/blog/
-- FAQ: ${site.url}/faq/
-- Contact: ${site.url}/contact/
-- Privacy Policy: ${site.url}/privacy/
-- Terms of Service: ${site.url}/terms/
+- Case Studies: ${site.url}/case-studies/
 `;
 
   return new Response(content, {

@@ -406,6 +406,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </div>
   </section>
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Done-For-You Sales Teams",
+    "provider": { "@type": "Organization", "name": "SalesAtScale.io" },
+    "description": "We source, vet, train, and manage top 1% closers for your business on a purely performance basis.",
+    "url": "https://www.salesatscale.io/services/dfy-sales/"
+  })} />
+
 </BaseLayout>
 
 <!-- Scroll animation observer -->
