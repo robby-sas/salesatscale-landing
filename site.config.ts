@@ -36,7 +36,7 @@ export const siteConfig = {
   social: { twitter: { handle: "", url: "" }, linkedin: { url: "" }, facebook: { url: "" } },
   analytics: { gtmId: "", ga4Id: "", googleSiteVerification: "", bingSiteVerification: "", facebookPixelId: "", linkedinPartnerId: "", clarityId: "" },
   nav: {
-    forBusinesses: { label: "For Businesses", items: [{ label: "DFY Sales", href: "/services/dfy-sales/" }, { label: "DFY Setting", href: "/services/dfy-setting/" }, { label: "Consulting", href: "/services/consulting/" }] },
+    forBusinesses: { label: "For Businesses", items: [{ label: "DFY Sales", href: "/services/dfy-sales/" }, { label: "DFY Setting", href: "https://www.sdrcallcenter.com" }, { label: "Consulting", href: "/services/consulting/" }] },
     forReps: { label: "For Sales Reps", items: [{ label: "Open Positions", href: "/careers/" }] },
     resources: { label: "Free Resources", items: [{ label: "Scripts & SOPs", href: "/resources/" }, { label: "YouTube", href: "https://youtube.com" }, { label: "Blog", href: "/blog/" }] },
   },
