@@ -1,0 +1,206 @@
+---
+const studies = [
+  {
+    id: 1,
+    category: "College Financial Aid",
+    title: "How We Fixed the Margins and Broke the Plateau of an Already Established Business",
+    description: "Scaled from $800K/month to a $1.1M run rate in 90 days by raising prices, adding a sales layer, and optimizing the fulfillment backend.",
+    metricLabel: "MoM Growth",
+    metricValue: "258%",
+    chartType: "area",
+    stats: [{ label: "Revenue Delta", value: "+$300k" }, { label: "Margin", value: "42%" }, { label: "ROAS", value: "4.8x" }],
+    content: "This client had a proven offer but was stuck in a 'success trap'. By restructuring their sales commissions and introducing a high-tier backend offer, we unlocked immediate cash flow without increasing ad spend.",
+  },
+  {
+    id: 2,
+    category: "Tax Strategy Consulting",
+    title: "How We 10x'd Revenue Without Changing the Offer or Spending a Dollar More on Ads",
+    description: "Scaled a tax strategy offer from ~$100K/month to $1M+ using the existing pipeline by fixing the conversion bottleneck.",
+    metricLabel: "Conversion Boost",
+    metricValue: "10x",
+    chartType: "funnel",
+    stats: [{ label: "Book Rate", value: "28%" }, { label: "Show Rate", value: "77%" }, { label: "Close %", value: "52%" }],
+    content: "The bottleneck wasn't lead flow; it was lead quality and follow-up cadence. We implemented a 5-minute speed-to-lead protocol and a pre-call homework sequence that pre-sold the prospect.",
+  },
+  {
+    id: 3,
+    category: "Real Estate Consulting",
+    title: "How We Built a Consistent Sales Operation That Compounds Month Over Month",
+    description: "Scaled a business past its $100k/month ceiling by building a custom CRM workflow and training a dedicated setter-closer team.",
+    metricLabel: "Total Collected",
+    metricValue: "$919,139",
+    chartType: "multi-line",
+    stats: [{ label: "New Cash", value: "$815k" }, { label: "Contract Value", value: "$1.01M" }, { label: "Calls", value: "1388" }],
+    content: "We replaced the founder-led sales process with a scalable framework. By month 4, the system was generating more revenue than the founder ever did manually.",
+  },
+];
+---
+
+<section class="bg-base py-32 px-6" id="case-studies">
+  <!-- Card Grid View -->
+  <div id="cs-grid">
+    <div class="max-w-5xl mx-auto text-center mb-24">
+      <h2 class="font-chivo font-black text-heading text-6xl md:text-8xl tracking-tighter mb-8 leading-none uppercase">
+        Case <span class="text-blue">Studies</span>
+      </h2>
+      <p class="font-chivo font-bold text-body text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed">
+        The Proof. <span style="color:#F8FAFC;">Exactly how we build scalable sales systems</span> for 7 and 8-figure established businesses.
+      </p>
+    </div>
+
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {studies.map((study) => (
+          <div
+            class="cs-card group flex flex-col rounded-[2.5rem] overflow-hidden cursor-pointer hover:-translate-y-3 transition-all duration-500 shadow-2xl"
+            style="background:#0D0D0D; border:1px solid rgba(255,255,255,0.05);"
+            data-study-id={study.id}
+          >
+            <!-- Header Data Section (White) -->
+            <div class="h-64 bg-white p-8 flex flex-col relative overflow-hidden" style="border-bottom:1px solid #E2E8F0;">
+              <div class="font-chivo font-black text-xl mb-4 uppercase tracking-tighter" style="color:#000;">
+                {study.chartType === 'area' ? 'Revenue Growth' : study.chartType === 'funnel' ? 'Conversion' : 'Performance'}
+              </div>
+              <div class="flex-1 relative">
+                {study.chartType === 'area' && (
+                  <div class="relative w-full h-full flex flex-col justify-end font-chivo">
+                    <div class="absolute top-0 right-0 text-[10px] font-black uppercase tracking-widest" style="color:#1D4ED8;">MoM Growth: 258%</div>
+                    <svg viewBox="0 0 400 150" class="w-full">
+                      <path d="M 0 140 Q 100 135, 150 110 T 250 40 T 350 20 T 400 30" fill="none" stroke="#003BE0" stroke-width="4" />
+                      <path d="M 0 140 Q 100 135, 150 110 T 250 40 T 350 20 T 400 30 V 150 H 0 Z" fill="rgba(0, 59, 224, 0.05)" />
+                      <circle cx="280" cy="45" r="6" fill="#003BE0" />
+                      <rect x="110" y="50" width="130" height="50" rx="14" fill="white" stroke="#E2E8F0" stroke-width="1" />
+                      <text x="125" y="72" font-size="10" font-weight="900" fill="#94A3B8">2026-02</text>
+                      <text x="125" y="88" font-size="13" font-weight="900" fill="#000000">Total: $741,400</text>
+                    </svg>
+                  </div>
+                )}
+                {study.chartType === 'funnel' && (
+                  <div class="w-full h-full flex flex-col justify-center font-chivo">
+                    <div class="grid grid-cols-4 gap-2 mb-4">
+                      {[{l:'Book Rate',v:'28%'},{l:'Show Rate',v:'77%'},{l:'Close BC',v:'40%'},{l:'Close Taken',v:'52%'}].map((s) => (
+                        <div class="bg-white rounded-xl p-2.5 shadow-sm" style="border:1px solid #F1F5F9;">
+                          <div class="text-[7px] font-black uppercase tracking-widest" style="color:#94A3B8;">{s.l}</div>
+                          <div class="text-sm font-black" style="color:#000;">{s.v}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <div class="w-full h-4 rounded-full overflow-hidden flex" style="background:#EFF6FF; border:1px solid #DBEAFE;">
+                      <div class="h-full w-[65%]" style="background:#003BE0;"></div>
+                      <div class="h-full w-[15%]" style="background:#3B82F6;"></div>
+                      <div class="h-full w-[10%]" style="background:#E2E8F0;"></div>
+                    </div>
+                    <div class="flex justify-between mt-1 text-[8px] font-black uppercase tracking-tighter" style="color:#1E3A5F;">
+                      <span>Leads</span><span>Booked</span><span>Showed</span><span style="color:#003BE0;">Closed</span>
+                    </div>
+                  </div>
+                )}
+                {study.chartType === 'multi-line' && (
+                  <div class="w-full h-full flex flex-col justify-center font-chivo">
+                    <div class="grid grid-cols-3 gap-2 mb-4">
+                      {[{l:'Total Cash',v:'$919k'},{l:'Contract',v:'$1.01M'},{l:'Calls',v:'1388'}].map((s) => (
+                        <div class="bg-white p-2.5 rounded-xl shadow-sm" style="border:1px solid #F1F5F9;">
+                          <div class="text-[7px] font-black uppercase tracking-widest" style="color:#94A3B8;">{s.l}</div>
+                          <div class="text-[11px] font-black" style="color:#000;">{s.v}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <svg viewBox="0 0 400 80" class="w-full">
+                      <path d="M 0 60 Q 50 55, 100 65 T 200 40 T 300 60 T 400 20" fill="none" stroke="#003BE0" stroke-width="4" />
+                      <path d="M 0 70 Q 50 68, 100 72 T 200 65 T 300 75 T 400 60" fill="none" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4" />
+                    </svg>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-10 flex-1 flex flex-col">
+              <div class="mb-6">
+                <span class="inline-block px-4 py-1 rounded-md bg-white text-[10px] font-black uppercase tracking-widest mb-6" style="color:#000;">
+                  {study.category}
+                </span>
+                <h3 class="font-chivo font-black text-2xl leading-tight tracking-tight group-hover:text-blue transition-colors" style="color:#F8FAFC;">
+                  {study.title}
+                </h3>
+              </div>
+              <p class="font-chivo font-bold text-sm leading-relaxed mb-10 line-clamp-3" style="color:#64748B;">
+                {study.description}
+              </p>
+              <div class="mt-auto flex items-center text-[11px] font-black uppercase tracking-[0.25em]" style="color:#F8FAFC;">
+                View Blueprint
+                <svg class="w-3.5 h-3.5 ml-3 text-blue group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- View All Button -->
+      <div class="mt-20 flex justify-center">
+        <a href="/case-studies/" class="group relative font-chivo font-black py-6 px-14 rounded-2xl uppercase tracking-[0.25em] text-xs shadow-2xl transition-all active:scale-95 bg-white hover:bg-blue" style="color:#000;">
+          View All Case Studies
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detail View (hidden by default) -->
+  <div id="cs-detail" class="hidden max-w-4xl mx-auto">
+    <button id="cs-back" class="flex items-center gap-2 uppercase tracking-[0.2em] text-[10px] font-black mb-12 transition-colors hover:text-white" style="color:#64748B;">
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Back to Case Studies
+    </button>
+    <div id="cs-detail-category" class="inline-block px-4 py-1.5 rounded-md bg-white text-[10px] font-black uppercase tracking-widest mb-6" style="color:#000;"></div>
+    <h2 id="cs-detail-title" class="font-chivo font-black text-5xl md:text-7xl leading-tight mb-8 tracking-tighter uppercase" style="color:#F8FAFC;"></h2>
+    <div id="cs-detail-stats" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"></div>
+    <div class="w-full h-px mb-12" style="background:rgba(255,255,255,0.05);"></div>
+    <p id="cs-detail-desc" class="font-chivo font-bold text-xl md:text-2xl leading-relaxed mb-12" style="color:#94A3B8;"></p>
+    <div class="p-12 rounded-[3rem] border shadow-2xl" style="background:#0D0D0D; border-color:rgba(0,59,224,0.2); box-shadow:0 25px 50px rgba(0,59,224,0.05);">
+      <h4 class="font-chivo font-black text-3xl mb-4 uppercase tracking-tighter" style="color:#F8FAFC;">Ready to scale?</h4>
+      <p class="font-chivo font-bold text-lg mb-8" style="color:#94A3B8;">Book a scale audit to find the hidden leverage points in your sales process.</p>
+      <a href="/apply/" class="inline-block bg-blue hover:bg-blue-hover text-white font-chivo font-black py-5 px-10 rounded-2xl transition-all uppercase tracking-[0.2em] text-xs shadow-xl">Book Scale Audit</a>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ studies }}>
+  document.querySelectorAll('.cs-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const id = parseInt(card.dataset.studyId);
+      const study = studies.find(s => s.id === id);
+      if (!study) return;
+
+      document.getElementById('cs-detail-category').textContent = study.category;
+      document.getElementById('cs-detail-title').textContent = study.title;
+      document.getElementById('cs-detail-desc').textContent = study.description;
+
+      const statsEl = document.getElementById('cs-detail-stats');
+      statsEl.innerHTML = study.stats.map(s =>
+        `<div style="background:#0D0D0D; border:1px solid rgba(255,255,255,0.05);" class="rounded-3xl p-8">
+          <div style="color:#64748B;" class="text-[10px] font-black uppercase tracking-widest mb-2">${s.label}</div>
+          <div style="color:#F8FAFC;" class="text-4xl font-black">${s.value}</div>
+        </div>`
+      ).join('');
+
+      document.getElementById('cs-grid').classList.add('hidden');
+      document.getElementById('cs-detail').classList.remove('hidden');
+      document.getElementById('case-studies').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  document.getElementById('cs-back')?.addEventListener('click', () => {
+    document.getElementById('cs-detail').classList.add('hidden');
+    document.getElementById('cs-grid').classList.remove('hidden');
+    document.getElementById('case-studies').scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
