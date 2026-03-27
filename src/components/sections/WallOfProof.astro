@@ -1,0 +1,139 @@
+---
+const testimonials = [
+  {
+    metric: "+$150k MRR in 90 Days",
+    quote: "SalesAtScale came in, completely revamped our hiring process, and placed 3 absolute killers. We literally couldn't handle the lead flow without them.",
+    name: "John Doe",
+    role: "Founder, EcomScale",
+    initials: "JD",
+  },
+  {
+    metric: "Doubled Close Rate",
+    quote: "We had the leads, but our internal team couldn't close them. They stepped in, implemented their infrastructure, and our close rate literally doubled overnight.",
+    name: "Sarah Jenkins",
+    role: "CEO, Elite Masterminds",
+    initials: "SJ",
+  },
+  {
+    metric: "Zero Recruiting Headaches",
+    quote: "I used to spend 20 hours a week interviewing SDRs who would quit in a month. Handing this over to them was the highest ROI decision I've made this year.",
+    name: "Marcus Roberts",
+    role: "Managing Partner, Alpha Cap",
+    initials: "MR",
+  },
+  {
+    metric: "Scaled to 8-Figures",
+    quote: "When you hit 8-figures, you need operators, not just salespeople. SalesAtScale built the exact sales infrastructure we needed to sustain our hyper-growth.",
+    name: "Amanda Wright",
+    role: "COO, Scale Consulting",
+    initials: "AW",
+  },
+];
+---
+
+<section class="bg-surface py-24 overflow-x-hidden">
+  <div class="w-full max-w-screen-2xl mx-auto flex flex-col">
+
+    <!-- Header & Navigation -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 max-w-7xl mx-auto w-full px-6">
+      <div class="max-w-2xl">
+        <span class="font-chivo font-bold tracking-[0.2em] uppercase text-sm mb-4 block text-blue">Proven Results</span>
+        <h2 class="font-chivo font-black text-heading text-[40px] md:text-[50px] leading-[1.05] tracking-tight uppercase mb-4 drop-shadow-md">
+          Don't Just Take <br/>Our Word For It.
+        </h2>
+        <p class="font-chivo font-medium text-body text-[18px] leading-relaxed">
+          Hear directly from the founders who stopped settling for ordinary sales teams and partnered with SalesAtScale.
+        </p>
+      </div>
+
+      <!-- Desktop Carousel Controls -->
+      <div class="hidden md:flex items-center gap-4 pb-2">
+        <button id="proof-left" class="w-12 h-12 rounded-full border border-card-border bg-card flex items-center justify-center hover:bg-blue hover:border-blue hover:shadow-btn-glow transition-all duration-300 group" style="color:#F8FAFC;" aria-label="Scroll left">
+          <svg class="w-6 h-6 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button id="proof-right" class="w-12 h-12 rounded-full border border-card-border bg-card flex items-center justify-center hover:bg-blue hover:border-blue hover:shadow-btn-glow transition-all duration-300 group" style="color:#F8FAFC;" aria-label="Scroll right">
+          <svg class="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Swipe Indicator -->
+    <div class="flex md:hidden justify-center items-center gap-2 mb-6 text-body text-sm px-4">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      <span>Swipe to see more</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+    </div>
+
+    <!-- Slider -->
+    <div class="relative w-full">
+      <div class="hidden lg:block absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none"></div>
+      <div class="hidden lg:block absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none"></div>
+
+      <div id="proof-slider" class="flex overflow-x-auto gap-6 sm:gap-8 pb-12 pt-4 px-4 lg:px-32 snap-x snap-mandatory no-scrollbar scroll-smooth">
+        {testimonials.map((t) => (
+          <div class="shrink-0 w-[85vw] sm:w-[420px] snap-center group bg-card rounded-2xl overflow-hidden border border-card-border transition-all duration-400 hover:-translate-y-2 hover:border-blue/60 hover:shadow-[0_20px_50px_rgba(0,0,0,0.6)] flex flex-col cursor-pointer">
+            <!-- Video Thumbnail -->
+            <div class="relative w-full aspect-video overflow-hidden" style="background:#070A11;">
+              <div class="absolute inset-0 bg-blue/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+              <img src="https://placehold.co/600x337/111827/475569?text=Video+Thumbnail" alt="Client Video" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" width="600" height="337" loading="lazy" />
+              <div class="absolute inset-0 flex items-center justify-center z-20">
+                <div class="w-16 h-16 bg-blue/90 backdrop-blur-sm rounded-full flex items-center justify-center pl-1 shadow-btn-glow group-hover:shadow-btn-glow-hover group-hover:scale-110 group-hover:bg-blue transition-all duration-300">
+                  <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-8 flex flex-col flex-grow relative">
+              <div class="absolute top-0 left-0 w-full h-1 bg-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <h4 class="font-chivo font-black text-xl uppercase tracking-tight mb-3 text-blue">{t.metric}</h4>
+              <p class="font-chivo italic text-[16px] leading-relaxed mb-8 flex-grow opacity-90" style="color:#F8FAFC;">
+                "{t.quote}"
+              </p>
+              <div class="flex items-center gap-4 mt-auto">
+                <div class="w-12 h-12 rounded-full border border-card-border overflow-hidden shrink-0">
+                  <img src={`https://placehold.co/100x100/334155/F8FAFC?text=${t.initials}`} alt={t.name} class="w-full h-full object-cover" width="100" height="100" loading="lazy" />
+                </div>
+                <div>
+                  <div class="font-chivo font-bold text-[15px]" style="color:#F8FAFC;">{t.name}</div>
+                  <div class="font-chivo font-medium text-sm text-body">{t.role}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-8 md:mt-16 flex justify-center px-4 w-full relative z-20">
+      <a href="/apply/" class="group inline-flex items-center gap-2 bg-blue hover:bg-blue-hover text-white font-chivo font-bold text-sm md:text-base tracking-[0.08em] uppercase px-12 md:px-16 py-4 md:py-5 rounded-full transition-all duration-300 shadow-btn-glow hover:shadow-btn-glow-hover hover:scale-[1.02]">
+        See If You Qualify
+        <svg class="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+
+<script>
+  function initProofSlider() {
+    const slider = document.getElementById('proof-slider');
+    const leftBtn = document.getElementById('proof-left');
+    const rightBtn = document.getElementById('proof-right');
+    if (!slider) return;
+    const scrollAmount = 440;
+    leftBtn?.addEventListener('click', () => slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' }));
+    rightBtn?.addEventListener('click', () => slider.scrollBy({ left: scrollAmount, behavior: 'smooth' }));
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initProofSlider);
+  } else {
+    initProofSlider();
+  }
+  document.addEventListener('astro:page-load', initProofSlider);
+</script>
