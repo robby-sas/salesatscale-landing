@@ -16,6 +16,34 @@
       <!-- Card 1: Info Products -->
       <div class="scroll-animate group relative bg-[#0A0A0A] rounded-none overflow-hidden border border-[#1F2937] flex flex-col transition-colors duration-300 hover:border-[#003BE0]">
         <div class="relative z-20 p-8 flex flex-col min-h-[420px]">
+          <!-- SVG Icon -->
+          <div class="w-16 h-16 mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" class="w-full h-full overflow-visible">
+              <defs>
+                <linearGradient id="grad-info" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#003be0" />
+                  <stop offset="100%" stop-color="#4b83ff" />
+                </linearGradient>
+                <filter id="glow-info" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="2.5" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+                <filter id="bg-blur-info" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="6" />
+                </filter>
+              </defs>
+              <circle cx="24" cy="24" r="16" fill="#003be0" fill-opacity="0.25" filter="url(#bg-blur-info)" />
+              <path d="M16 42 L32 42" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+              <path d="M24 34 L24 42" stroke="#ffffff" stroke-width="2"/>
+              <rect x="4" y="10" width="40" height="24" rx="3" fill="#050505" stroke="#ffffff" stroke-width="2"/>
+              <polygon points="17,17 25,22 17,27" fill="url(#grad-info)" filter="url(#glow-info)"/>
+              <path d="M 29 22 L 34 14 L 38 16 L 46 6" fill="none" stroke="url(#grad-info)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow-info)"/>
+              <path d="M 38 6 L 46 6 L 46 14" fill="none" stroke="url(#grad-info)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow-info)"/>
+              <circle cx="8" cy="4" r="1.5" fill="#ffffff" opacity="0.4"/>
+              <circle cx="38" cy="38" r="2" fill="#003be0" opacity="0.8"/>
+              <path d="M 6 30 L 10 30" stroke="#ffffff" stroke-width="1" opacity="0.3" stroke-linecap="round"/>
+            </svg>
+          </div>
           <h3 class="font-chivo font-black text-[#F8FAFC] text-[34px] tracking-tight leading-[1.05] mb-5 uppercase">Info Products</h3>
           <p class="font-jakarta font-medium text-[#9CA3AF] text-[17px] leading-relaxed">
             Scale course creators and coaching businesses to million-dollar months. We've worked with the biggest names in the industry, year after year, getting massive results.
@@ -26,6 +54,35 @@
       <!-- Card 2: Masterminds -->
       <div class="scroll-animate group relative bg-[#0A0A0A] rounded-none overflow-hidden border border-[#1F2937] flex flex-col transition-colors duration-300 hover:border-[#003BE0]">
         <div class="relative z-20 p-8 flex flex-col min-h-[420px]">
+          <!-- SVG Icon -->
+          <div class="w-16 h-16 mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" class="w-full h-full overflow-visible">
+              <defs>
+                <linearGradient id="grad-master" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#003be0" />
+                  <stop offset="100%" stop-color="#4b83ff" />
+                </linearGradient>
+                <filter id="glow-master" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="2.5" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+                <filter id="bg-blur-master" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="6" />
+                </filter>
+              </defs>
+              <circle cx="24" cy="24" r="18" fill="#003be0" fill-opacity="0.25" filter="url(#bg-blur-master)" />
+              <polygon points="24 2, 43 13, 43 35, 24 46, 5 35, 5 13" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.4"/>
+              <polygon points="24 10, 36 17, 36 31, 24 38, 12 31, 12 17" fill="none" stroke="url(#grad-master)" stroke-width="2.5" filter="url(#glow-master)"/>
+              <line x1="24" y1="24" x2="24" y2="10" stroke="#ffffff" stroke-width="1.5" opacity="0.7"/>
+              <line x1="24" y1="24" x2="36" y2="31" stroke="#ffffff" stroke-width="1.5" opacity="0.7"/>
+              <line x1="24" y1="24" x2="12" y2="31" stroke="#ffffff" stroke-width="1.5" opacity="0.7"/>
+              <circle cx="24" cy="10" r="2.5" fill="#ffffff"/>
+              <circle cx="36" cy="31" r="2.5" fill="#ffffff"/>
+              <circle cx="12" cy="31" r="2.5" fill="#ffffff"/>
+              <circle cx="24" cy="24" r="5" fill="url(#grad-master)" filter="url(#glow-master)"/>
+              <circle cx="24" cy="24" r="10" fill="none" stroke="#003be0" stroke-width="1" opacity="0.6"/>
+            </svg>
+          </div>
           <h3 class="font-chivo font-black text-[#F8FAFC] text-[34px] tracking-tight leading-[1.05] mb-5 uppercase">Masterminds</h3>
           <p class="font-jakarta font-medium text-[#9CA3AF] text-[17px] leading-relaxed">
             We build and manage high-performing sales teams for masterminds, group coaching programs, and high-ticket communities looking to scale enrollment. We handle the volume so you can focus on the impact.
@@ -36,6 +93,34 @@
       <!-- Card 3: Service Providers -->
       <div class="scroll-animate group relative bg-[#0A0A0A] rounded-none overflow-hidden border border-[#1F2937] flex flex-col transition-colors duration-300 hover:border-[#003BE0]">
         <div class="relative z-20 p-8 flex flex-col min-h-[420px]">
+          <!-- SVG Icon -->
+          <div class="w-16 h-16 mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" class="w-full h-full overflow-visible">
+              <defs>
+                <linearGradient id="grad-service" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#4b83ff" />
+                  <stop offset="100%" stop-color="#003be0" />
+                </linearGradient>
+                <filter id="glow-service" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="2.5" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+                <filter id="bg-blur-service" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="6" />
+                </filter>
+              </defs>
+              <circle cx="24" cy="24" r="16" fill="#003be0" fill-opacity="0.25" filter="url(#bg-blur-service)" />
+              <path d="M 4 8 L 44 8" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+              <path d="M 12 20 L 36 20" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 3" opacity="0.4"/>
+              <path d="M 6 8 L 20 32 L 20 44 L 28 44 L 28 32 L 42 8" fill="none" stroke="url(#grad-service)" stroke-width="2.5" stroke-linejoin="round" filter="url(#glow-service)"/>
+              <path d="M 24 12 L 24 22 M 20 18 L 24 22 L 28 18" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+              <circle cx="14" cy="-2" r="2" fill="#ffffff" opacity="0.5"/>
+              <circle cx="24" cy="-4" r="2.5" fill="#ffffff" opacity="0.8"/>
+              <circle cx="34" cy="0" r="1.5" fill="#ffffff" opacity="0.4"/>
+              <circle cx="38" cy="-6" r="2" fill="#003be0" opacity="0.7"/>
+              <rect x="21" y="44" width="6" height="6" rx="1" fill="url(#grad-service)" transform="rotate(45 24 47)" filter="url(#glow-service)"/>
+            </svg>
+          </div>
           <h3 class="font-chivo font-black text-[#F8FAFC] text-[34px] tracking-tight leading-[1.05] mb-5 uppercase">Service Providers</h3>
           <p class="font-jakarta font-medium text-[#9CA3AF] text-[17px] leading-relaxed">
             From wealth advisors and insurance providers to health & wellness companies, trading firms, and DFY businesses — we generate consistent qualified leads at scale.
