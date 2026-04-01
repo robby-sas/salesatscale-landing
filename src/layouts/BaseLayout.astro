@@ -31,7 +31,7 @@ const { analytics } = siteConfig;
     <BaseHead {...props} />
     <JsonLd organization={true} />
   </head>
-  <body class="bg-base antialiased font-jakarta text-body">
+  <body class="bg-[#050505] antialiased font-jakarta text-[#9CA3AF]">
     <!-- Skip to Content -->
     <a href="#main-content" class="skip-link">Skip to content</a>
 
@@ -55,6 +55,7 @@ const { analytics } = siteConfig;
 
     <Footer />
     <CookieConsent />
+    <div class="fixed inset-0 pointer-events-none z-[999] bg-noise"></div>
   </body>
 </html>
 

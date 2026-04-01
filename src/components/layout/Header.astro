@@ -4,7 +4,7 @@ const { nav, cta } = siteConfig;
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50">
-  <nav class="max-w-6xl mx-auto mt-4 px-6 py-3 rounded-full bg-card/80 backdrop-blur-xl border border-card-border/50">
+  <nav class="max-w-6xl mx-auto px-6 py-3 bg-[#050505]/90 backdrop-blur-sm border-b border-[#1F2937]">
     <div class="flex items-center justify-between">
       <!-- Logo -->
       <a href="/" class="flex items-center gap-2 flex-shrink-0">
@@ -24,7 +24,7 @@ const { nav, cta } = siteConfig;
             {nav.forBusinesses.label}
             <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
-          <div class="absolute top-full left-0 mt-3 w-52 bg-charcoal border border-white/10 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 -translate-y-2 group-hover:translate-y-0">
+          <div class="absolute top-full left-0 mt-3 w-52 bg-[#0A0A0A] border border-[#1F2937] rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 -translate-y-2 group-hover:translate-y-0">
             <div class="py-2">
               {nav.forBusinesses.items.map((item) => (
                 <a href={item.href} class="block px-4 py-2.5 text-sm text-silver hover:text-white hover:bg-white/5 transition-colors font-jakarta">{item.label}</a>
@@ -39,7 +39,7 @@ const { nav, cta } = siteConfig;
             {nav.forReps.label}
             <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
-          <div class="absolute top-full left-0 mt-3 w-52 bg-charcoal border border-white/10 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 -translate-y-2 group-hover:translate-y-0">
+          <div class="absolute top-full left-0 mt-3 w-52 bg-[#0A0A0A] border border-[#1F2937] rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 -translate-y-2 group-hover:translate-y-0">
             <div class="py-2">
               {nav.forReps.items.map((item) => (
                 <a href={item.href} class="block px-4 py-2.5 text-sm text-silver hover:text-white hover:bg-white/5 transition-colors font-jakarta">{item.label}</a>
@@ -54,7 +54,7 @@ const { nav, cta } = siteConfig;
             {nav.resources.label}
             <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
-          <div class="absolute top-full left-0 mt-3 w-52 bg-charcoal border border-white/10 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 -translate-y-2 group-hover:translate-y-0">
+          <div class="absolute top-full left-0 mt-3 w-52 bg-[#0A0A0A] border border-[#1F2937] rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 -translate-y-2 group-hover:translate-y-0">
             <div class="py-2">
               {nav.resources.items.map((item) => (
                 <a href={item.href} class="block px-4 py-2.5 text-sm text-silver hover:text-white hover:bg-white/5 transition-colors font-jakarta">{item.label}</a>
@@ -67,7 +67,7 @@ const { nav, cta } = siteConfig;
         <a href={nav.results.href} class="text-sm text-silver hover:text-white transition-colors font-jakarta font-medium">{nav.results.label}</a>
 
         <!-- CTA -->
-        <a href={cta.primary.url} class="bg-blue hover:bg-blue-deep text-white font-chivo font-bold text-xs tracking-[0.1em] uppercase px-6 py-2.5 rounded-full transition-colors">
+        <a href={cta.primary.url} class="bg-[#003BE0] hover:bg-[#0044FF] text-white font-chivo font-bold text-xs tracking-[0.1em] uppercase px-6 py-2.5 rounded-full transition-colors">
           {cta.primary.text}
         </a>
       </div>

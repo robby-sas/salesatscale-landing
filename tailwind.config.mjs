@@ -28,27 +28,16 @@ export default {
         chivo: ["Chivo", "sans-serif"],
         jakarta: ["Plus Jakarta Sans", "sans-serif"],
       },
-      boxShadow: {
-        card: "0 4px 6px -1px rgba(0, 0, 0, 0.5)",
-        "btn-glow": "0 0 15px rgba(0, 59, 224, 0.4)",
-        "btn-glow-hover": "0 0 25px rgba(0, 59, 224, 0.6)",
-      },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out forwards",
         "fade-in-up": "fadeInUp 0.7s ease-out forwards",
         "slide-up": "slideUp 0.8s ease-out forwards",
-        blob: "blob 10s infinite alternate",
-        "blob-delayed": "blob 12s infinite alternate-reverse",
         scroll: "scroll 30s linear infinite",
       },
       keyframes: {
         fadeIn: { "0%": { opacity: "0" }, "100%": { opacity: "1" } },
         fadeInUp: { "0%": { opacity: "0", transform: "translateY(24px)" }, "100%": { opacity: "1", transform: "translateY(0)" } },
         slideUp: { "0%": { opacity: "0", transform: "translateY(40px)" }, "100%": { opacity: "1", transform: "translateY(0)" } },
-        blob: {
-          "0%": { transform: "translate(0px, 0px) scale(1)", opacity: "0.15" },
-          "100%": { transform: "translate(30px, -50px) scale(1.1)", opacity: "0.25" },
-        },
         scroll: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },

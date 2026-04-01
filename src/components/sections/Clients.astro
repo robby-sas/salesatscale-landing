@@ -11,27 +11,24 @@ const clients = [
 ];
 ---
 
-<section class="bg-base pt-12 pb-24">
+<section class="bg-[#050505] pt-12 pb-24">
   <div class="max-w-7xl mx-auto px-6">
     <div class="scroll-animate mb-16">
-      <span class="font-jakarta font-semibold text-xs tracking-[0.18em] uppercase text-blue mb-4 block">Our Clients</span>
-      <h2 class="font-chivo font-black text-heading text-4xl md:text-5xl tracking-[-0.03em] leading-[1]">
+      <span class="font-jakarta font-semibold text-xs tracking-[0.18em] uppercase text-[#003BE0] mb-4 block">Our Clients</span>
+      <h2 class="font-chivo font-black text-[#F8FAFC] text-4xl md:text-5xl tracking-[-0.03em] leading-[1]">
         Meet Our Clients Who Use<br/>SalesAtScale.io
       </h2>
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 w-full">
       {clients.map((client) => (
-        <div class="scroll-animate group relative bg-card rounded-lg overflow-hidden flex flex-col border border-card-border hover:border-blue/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
-          <!-- Blue top accent on hover -->
-          <div class="absolute top-0 left-0 w-full h-1 bg-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
-
+        <div class="scroll-animate group relative bg-[#0A0A0A] rounded-none overflow-hidden flex flex-col border border-[#1F2937] hover:border-[#003BE0] transition-colors duration-300">
           <!-- Image -->
           <div class="w-full bg-[#070A11] relative overflow-hidden" style="aspect-ratio: 16/10;">
             <img
               src={client.image}
               alt={`${client.name} — SalesAtScale.io client`}
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              class="w-full h-full object-cover"
               width="600"
               height="375"
               loading="lazy"
@@ -40,8 +37,8 @@ const clients = [
           </div>
 
           <!-- Name Strip -->
-          <div class="py-4 bg-card flex justify-center items-center">
-            <span class="font-jakarta font-medium text-heading text-[15px] tracking-wide">{client.name}</span>
+          <div class="py-4 bg-[#0A0A0A] flex justify-center items-center">
+            <span class="font-jakarta font-medium text-[#F8FAFC] text-[15px] tracking-wide">{client.name}</span>
           </div>
         </div>
       ))}
@@ -49,7 +46,7 @@ const clients = [
 
     <!-- CTA -->
     <div class="text-center mt-16">
-      <a href="/apply/" class="group inline-flex items-center gap-2 bg-blue hover:bg-blue-hover text-white font-chivo font-bold text-sm md:text-base tracking-[0.08em] uppercase px-12 md:px-16 py-4 md:py-5 rounded-full transition-all duration-300 shadow-btn-glow hover:shadow-btn-glow-hover hover:scale-[1.02]">
+      <a href="/apply/" class="group inline-flex items-center gap-2 bg-[#003BE0] hover:bg-[#0044FF] text-white font-chivo font-bold text-sm md:text-base tracking-[0.08em] uppercase px-12 md:px-16 py-4 md:py-5 rounded-full transition-colors duration-300">
         APPLY NOW
         <svg class="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
       </a>
