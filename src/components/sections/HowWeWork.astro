@@ -1,14 +1,20 @@
 ---
-const phases = [
+const steps = [
   {
+    number: "01",
+    timeframe: "Days 1-3",
     title: "MIND (Alignment)",
     items: [
       "Audit your unit economics, offer structure, and sales messaging.",
       "Map out the psychological roadmap of your buyers.",
       "Ensure your offer and pricing are optimized to absorb high-volume deal flow profitably.",
     ],
+    mt: "md:mt-[80px]",
+    dy: -80,
   },
   {
+    number: "02",
+    timeframe: "Days 4-7",
     title: "Systems Buildout",
     items: [
       "Install proprietary CRM tracking infrastructure.",
@@ -16,166 +22,103 @@ const phases = [
       "Create airtight SOPs for every stage of the sales process.",
       "Achieve 100% visibility into your revenue pipeline.",
     ],
+    mt: "md:mt-[0px]",
+    dy: 120,
   },
   {
-    title: "Installing Setters & Closers",
+    number: "03",
+    timeframe: "Week 2",
+    title: "Installing Setters",
     items: [
-      "Source, aggressively vet, and place top 1% sales talent.",
-      "Train reps specifically to your model, offer, and brand language.",
-      "Hand over a fully trained, performance-driven team ready on day one.",
-      "Zero resumes, zero interviews — we handle everything.",
+      "Source, vet, and place top 1% sales talent specifically for your offer.",
+      "Intensive training on your unique psychological roadmap.",
+      "Deploy and manage the team on a purely performance basis.",
     ],
+    mt: "md:mt-[120px]",
+    dy: -80,
   },
   {
-    title: "Revenue Orchestration",
+    number: "04",
+    timeframe: "Day 14 & Beyond",
+    title: "Active Management",
     items: [
-      "Act as your Fractional VP of Sales.",
-      "Run daily huddles, conduct call reviews, and optimize scripts.",
-      "Continuously push close rates higher with data-driven coaching.",
-      "Manage the floor, track the KPIs, and scale the revenue.",
+      "Daily KPI tracking and continuous performance reviews.",
+      "Live call QA and weekly optimization training.",
+      "Scale lead volume confidently as conversion benchmarks are hit.",
     ],
+    mt: "md:mt-[40px]",
+    dy: 0,
   },
 ];
 ---
 
-<section class="bg-base py-24 relative overflow-hidden" id="how-we-work">
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-glow rounded-full blur-[120px] pointer-events-none"></div>
+<section class="bg-[#050505] overflow-hidden" id="how-we-work">
+  <div class="max-w-7xl mx-auto px-6 py-24 md:py-32">
 
-  <div class="relative max-w-6xl mx-auto px-6">
-    <div class="grid lg:grid-cols-[280px_1fr] gap-16">
-      <!-- Left: Sticky title -->
-      <div class="lg:sticky lg:top-32 lg:self-start">
-        <h2 class="font-chivo font-black text-heading text-4xl md:text-5xl tracking-[-0.03em] leading-[1] mb-4">How We Work</h2>
-        <p class="font-jakarta font-light text-body text-base leading-relaxed">Our System to Automate Your Sales</p>
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 md:pb-16">
+      <div class="max-w-2xl">
+        <span class="text-blue font-chivo font-bold tracking-widest uppercase text-xs mb-4 block">Infrastructure</span>
+        <h2 class="font-chivo font-bold text-5xl md:text-7xl tracking-tight leading-[1.1]" style="color:#FFFFFF;">How We Work</h2>
       </div>
+      <p class="font-chivo font-light text-lg md:text-xl max-w-md mt-8 md:mt-0 md:text-right" style="color:#9CA3AF;">
+        Our rigid, uncompromising system to audit, build, and deploy a scalable 7-figure sales engine <strong class="font-semibold" style="color:#FFFFFF;">in just 14 days.</strong>
+      </p>
+    </div>
 
-      <!-- Right: Timeline -->
-      <div class="relative" id="timeline-container">
-        <!-- Vertical line background (dimmed track) -->
-        <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-card-border/30 rounded-full"></div>
-        <!-- Vertical line progress (fills as you scroll) -->
-        <div id="timeline-bar" class="absolute left-6 top-0 w-0.5 rounded-full bg-blue origin-top" style="height: 0; transition: height 0.15s linear; box-shadow: 0 0 8px rgba(0,59,224,0.5);"></div>
+    <!-- Floating Process Map -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-y-12 md:gap-y-0 relative z-10 pt-12 pb-32">
+      {steps.map((step, index) => (
+        <div class={`relative flex flex-col w-full group ${step.mt}`}>
 
-        {phases.map((phase, i) => (
-          <div class="timeline-phase relative pl-16 pb-24 last:pb-0" data-phase={i}>
-            <!-- Node circle -->
-            <div class="timeline-node absolute left-0 w-12 h-12 rounded-full flex items-center justify-center border-2 bg-card border-card-border text-body/30" style="transition: all 0.5s cubic-bezier(.4,0,.2,1);">
-              {i === 0 && (
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-              )}
-              {i === 1 && (
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-              )}
-              {i === 2 && (
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-              )}
-              {i === 3 && (
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-              )}
-            </div>
+          {/* Mobile vertical connecting line */}
+          {index < steps.length - 1 && (
+            <div class="absolute left-[1.125rem] top-8 bottom-[-4rem] w-px md:hidden z-0 pointer-events-none" style="background:#1f2937;"></div>
+          )}
 
-            <!-- Phase content -->
-            <div class="timeline-content" style="opacity: 0.15; transform: translateY(12px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
-              <h3 class="font-chivo font-black text-heading text-2xl tracking-[-0.02em] mb-6">{phase.title}</h3>
+          {/* Timeframe above the node */}
+          <div class="pl-12 md:pl-0 mb-6 md:text-center md:flex md:justify-center">
+            <span class="font-mono text-xs uppercase tracking-widest text-blue relative z-10 px-2 group-hover:text-blue-light transition-colors duration-300" style="background:#050505;">
+              {step.timeframe}
+            </span>
+          </div>
+
+          {/* Node & connecting line layer */}
+          <div class="relative w-full h-0 z-0">
+            {/* Desktop SVG connecting line */}
+            {index < steps.length - 1 && (
+              <svg class="hidden md:block absolute top-0 left-1/2 w-full overflow-visible pointer-events-none" style="height:1px; z-index:0;">
+                <line x1="0" y1="0" x2="100%" y2={step.dy} stroke="#1f2937" stroke-width="2" />
+              </svg>
+            )}
+
+            {/* Diamond node */}
+            <div class="absolute top-0 left-[1.125rem] md:left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rotate-45 z-10 group-hover:shadow-[0_0_15px_rgba(0,59,224,0.6)] transition-all duration-300" style="background:#050505; border:2px solid #1f2937;" onmouseenter="this.style.borderColor='#003BE0';this.style.background='#003BE0'" onmouseleave="this.style.borderColor='#1f2937';this.style.background='#050505'"></div>
+          </div>
+
+          {/* Content card */}
+          <div class="ml-12 md:mx-4 lg:mx-6 mt-6 p-6 md:p-8 relative overflow-hidden group-hover:border-gray-600 transition-colors duration-300 flex-grow" style="border:1px solid rgba(31,41,55,0.6); background:#0A0A0A;">
+
+            {/* Giant background number */}
+            <div class="absolute -bottom-6 -right-4 text-8xl md:text-9xl font-chivo font-black pointer-events-none select-none" style="color:#151515;">{step.number}</div>
+
+            {/* Card content */}
+            <div class="relative z-10">
+              <h3 class="font-chivo font-bold text-xl lg:text-2xl mb-6 tracking-tight" style="color:#FFFFFF;">{step.title}</h3>
               <ul class="space-y-4">
-                {phase.items.map((item, j) => (
-                  <li class="timeline-item flex items-start gap-3" style={`opacity: 0; transform: translateY(8px); transition: opacity 0.4s ease-out ${j * 0.1}s, transform 0.4s ease-out ${j * 0.1}s;`}>
-                    <svg class="w-5 h-5 text-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <span class="font-jakarta font-medium text-body text-sm leading-relaxed">{item}</span>
+                {step.items.map((item) => (
+                  <li class="flex items-start">
+                    <div class="w-1.5 h-1.5 bg-blue mt-2.5 mr-3 flex-shrink-0"></div>
+                    <span class="font-chivo font-light text-sm md:text-base leading-relaxed" style="color:#9CA3AF;">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
-        ))}
-      </div>
+
+        </div>
+      ))}
     </div>
+
   </div>
 </section>
-
-<script>
-  function runTimeline() {
-    const container = document.getElementById('timeline-container');
-    const bar = document.getElementById('timeline-bar');
-    const phases = document.querySelectorAll('.timeline-phase');
-    if (!container || !bar || !phases.length) return;
-
-    let ticking = false;
-
-    function update() {
-      const containerRect = container.getBoundingClientRect();
-      const containerTop = containerRect.top;
-      const containerHeight = containerRect.height;
-      const trigger = window.innerHeight * 0.6; // 60% down the viewport
-
-      // How far the trigger line is into the container (0 to 1)
-      const scrolled = (trigger - containerTop) / containerHeight;
-      const progress = Math.max(0, Math.min(scrolled, 1));
-
-      // Animate the blue progress bar height
-      bar.style.height = `${progress * 100}%`;
-
-      // For each phase, check if the progress bar has reached it
-      phases.forEach((phase) => {
-        const el = phase as HTMLElement;
-        const node = el.querySelector('.timeline-node') as HTMLElement;
-        const content = el.querySelector('.timeline-content') as HTMLElement;
-        const items = el.querySelectorAll('.timeline-item') as NodeListOf<HTMLElement>;
-
-        // Position of this phase's node relative to the container
-        const nodeTop = el.offsetTop + 24; // center of 48px node
-        const nodeProgress = nodeTop / containerHeight;
-
-        if (progress >= nodeProgress) {
-          // Phase is reached — light it up
-          node.style.backgroundColor = '#003be0';
-          node.style.borderColor = '#003be0';
-          node.style.color = 'white';
-          node.style.boxShadow = '0 0 20px rgba(0,59,224,0.5), 0 0 40px rgba(0,59,224,0.2)';
-
-          content.style.opacity = '1';
-          content.style.transform = 'translateY(0)';
-
-          items.forEach((item) => {
-            item.style.opacity = '1';
-            item.style.transform = 'translateY(0)';
-          });
-        } else {
-          // Phase not yet reached — keep dim
-          node.style.backgroundColor = '#1E293B';
-          node.style.borderColor = '#334155';
-          node.style.color = 'rgba(255,255,255,0.2)';
-          node.style.boxShadow = 'none';
-
-          content.style.opacity = '0.15';
-          content.style.transform = 'translateY(12px)';
-
-          items.forEach((item) => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(8px)';
-          });
-        }
-      });
-
-      ticking = false;
-    }
-
-    function onScroll() {
-      if (!ticking) {
-        requestAnimationFrame(update);
-        ticking = true;
-      }
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    update(); // run once on load
-  }
-
-  // Init
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', runTimeline);
-  } else {
-    runTimeline();
-  }
-  document.addEventListener('astro:page-load', runTimeline);
-</script>
