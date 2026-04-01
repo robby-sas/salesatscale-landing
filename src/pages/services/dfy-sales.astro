@@ -8,17 +8,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 >
 
   <!-- ========== HERO SECTION ========== -->
-  <section class="relative bg-base pt-28 pb-20 overflow-hidden">
-    <!-- Tech Grid Background -->
-    <div class="absolute inset-0 bg-grid-service pointer-events-none"></div>
-    <!-- Ambient Glow -->
-    <div class="absolute -top-[20%] left-1/2 -translate-x-1/2 w-[70%] h-[60%] rounded-full bg-blue blur-[160px] opacity-10 pointer-events-none"></div>
-    <!-- Noise -->
-    <div class="absolute inset-0 bg-noise pointer-events-none"></div>
+  <section class="relative bg-[#050505] pt-28 pb-20 overflow-hidden">
 
     <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
       <!-- Eyebrow Pill -->
-      <div class="inline-flex items-center gap-2.5 bg-surface border border-card-border rounded-full px-5 py-2 mb-8">
+      <div class="inline-flex items-center gap-2.5 bg-[#050505] border border-[#1F2937] rounded-full px-5 py-2 mb-8">
         <span class="relative flex h-2.5 w-2.5">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue"></span>
@@ -39,8 +33,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <!-- VSL Video Player -->
       <div class="relative max-w-3xl mx-auto">
         <!-- Glow Effect -->
-        <div class="absolute -inset-4 bg-blue/15 rounded-3xl blur-2xl -z-10"></div>
-        <div class="relative rounded-2xl overflow-hidden bg-card border border-card-border aspect-video shadow-card">
+        
+        <div class="relative rounded-none overflow-hidden bg-[#0A0A0A] border border-[#1F2937] aspect-video ">
           <img
             src="https://placehold.co/960x540/1E293B/003be0?text=VSL+Video"
             alt="Done-For-You Sales Teams overview video"
@@ -50,7 +44,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             loading="eager"
           />
           <div class="absolute inset-0 flex items-center justify-center">
-            <button class="w-18 h-18 md:w-20 md:h-20 bg-blue rounded-full flex items-center justify-center shadow-btn-glow hover:bg-blue-hover hover:scale-110 transition-all duration-300 group" aria-label="Play video">
+            <button class="w-18 h-18 md:w-20 md:h-20 bg-blue rounded-full flex items-center justify-center  hover:bg-[#0044FF] hover:scale-110 transition-all duration-300 group" aria-label="Play video">
               <svg class="w-7 h-7 md:w-8 md:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             </button>
           </div>
@@ -60,7 +54,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   </section>
 
   <!-- ========== AUTHORITY BANNER ========== -->
-  <section class="bg-base border-y border-card-border py-8 overflow-hidden">
+  <section class="bg-[#050505] border-y border-[#1F2937] py-8 overflow-hidden">
     <p class="text-center text-xs font-semibold tracking-widest uppercase mb-6" style="color:#94A3B8;">Trusted by industry leaders</p>
     <div class="w-full overflow-hidden mask-edges marquee-container">
       <div class="flex w-[200%] animate-scroll items-center">
@@ -85,7 +79,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   </section>
 
   <!-- ========== TYPEFORM EMBED SECTION ========== -->
-  <section id="apply" class="bg-surface py-24">
+  <section id="apply" class="bg-[#050505] py-24">
     <div class="max-w-4xl mx-auto px-6">
       <div class="text-center mb-12">
         <span class="font-chivo font-bold tracking-[0.2em] uppercase text-sm mb-4 block text-blue">Apply Now</span>
@@ -96,7 +90,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           Fill out the short application below and our team will be in touch within 24 hours.
         </p>
       </div>
-      <div class="relative rounded-2xl bg-card border border-card-border p-8 md:p-12 min-h-[500px]">
+      <div class="relative rounded-none bg-[#0A0A0A] border border-[#1F2937] p-8 md:p-12 min-h-[500px]">
         <!-- Loading Skeleton -->
         <div id="typeform-skeleton" class="absolute inset-0 flex items-center justify-center">
           <div class="flex flex-col items-center gap-4">
@@ -114,8 +108,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   </section>
 
   <!-- ========== WHO WE WORK WITH ========== -->
-  <section class="bg-base py-24 relative overflow-hidden">
-    <div class="absolute inset-0 bg-grid-service pointer-events-none"></div>
+  <section class="bg-[#050505] py-24 relative overflow-hidden">
+    
     <div class="relative z-10 max-w-6xl mx-auto px-6">
       <!-- Header -->
       <div class="text-center mb-16">
@@ -128,10 +122,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <!-- 2 Cards -->
       <div class="grid md:grid-cols-2 gap-8 mb-12">
         <!-- Card 1: Underperforming Sales Team -->
-        <div class="group rounded-2xl bg-card border border-card-border p-8 md:p-10 hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+        <div class="group rounded-none bg-[#0A0A0A] border border-[#1F2937] p-8 md:p-10  transition-all duration-300 ">
           <!-- Icon -->
           <div class="mb-6 relative w-16 h-16 flex items-center justify-center">
-            <div class="absolute inset-0 bg-blue/20 rounded-xl blur-lg group-hover:bg-blue/30 transition-colors"></div>
+            
             <svg class="relative w-10 h-10 text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
               <rect x="2" y="3" width="20" height="14" rx="2" />
               <path d="M8 21h8M12 17v4" />
@@ -146,10 +140,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         </div>
 
         <!-- Card 2: New Sales Team Builder -->
-        <div class="group rounded-2xl bg-card border border-card-border p-8 md:p-10 hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+        <div class="group rounded-none bg-[#0A0A0A] border border-[#1F2937] p-8 md:p-10  transition-all duration-300 ">
           <!-- Icon -->
           <div class="mb-6 relative w-16 h-16 flex items-center justify-center">
-            <div class="absolute inset-0 bg-blue/20 rounded-xl blur-lg group-hover:bg-blue/30 transition-colors"></div>
+            
             <svg class="relative w-10 h-10 text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
               <path d="M3 21h18M5 21V7l8-4v18M13 21V5l6 3v13" />
               <path d="M9 9h1M9 12h1M9 15h1" stroke-linecap="round" />
@@ -165,7 +159,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
       <!-- CTA -->
       <div class="text-center">
-        <a href="#apply" class="group inline-flex items-center gap-2 bg-blue hover:bg-blue-hover text-white font-chivo font-bold text-sm md:text-base tracking-[0.08em] uppercase px-12 py-4 rounded-md transition-all duration-300 shadow-btn-glow hover:shadow-btn-glow-hover hover:-translate-y-0.5">
+        <a href="#apply" class="group inline-flex items-center gap-2 bg-[#003BE0] hover:bg-[#0044FF] text-white font-chivo font-bold text-sm md:text-base tracking-[0.08em] uppercase px-12 py-4 rounded-md transition-all duration-300  hover: ">
           Get Started Now
           <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </a>
@@ -174,7 +168,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   </section>
 
   <!-- ========== THE FRAMEWORK / 4 PHASES ========== -->
-  <section class="bg-surface py-24 overflow-hidden">
+  <section class="bg-[#050505] py-24 overflow-hidden">
     <div class="max-w-6xl mx-auto px-6">
       <!-- Header -->
       <div class="text-center mb-20">
@@ -192,7 +186,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <!-- Phase 01: MIND (Alignment) -->
         <div class="relative grid md:grid-cols-2 gap-8 md:gap-16 items-center mb-20">
           <!-- Connector Dot -->
-          <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-5 h-5 rounded-full bg-blue shadow-btn-glow items-center justify-center">
+          <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-5 h-5 rounded-full bg-blue  items-center justify-center">
             <div class="w-2 h-2 rounded-full bg-white"></div>
           </div>
           <!-- Text (left) -->
@@ -202,7 +196,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <p class="font-jakarta text-base leading-relaxed mb-6" style="color:#94A3B8;">
               Before we touch your sales process, we audit your unit economics, offer structure, and market positioning. We align on revenue targets, cash-collected goals, and the exact sales model your business needs to scale predictably.
             </p>
-            <div class="rounded-lg border border-blue/30 bg-blue/5 p-4">
+            <div class="rounded-none border border-[#1F2937] bg-[#0A0A0A] p-4">
               <span class="font-chivo font-bold text-xs tracking-widest uppercase text-blue block mb-1">The Goal</span>
               <p class="font-jakarta text-sm leading-relaxed" style="color:#94A3B8;">Crystal-clear revenue targets and a validated offer that your sales team can confidently close.</p>
             </div>
@@ -210,7 +204,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <!-- Icon (right) -->
           <div class="flex justify-center md:pl-12 order-first md:order-last">
             <div class="relative w-32 h-32 flex items-center justify-center">
-              <div class="absolute inset-0 bg-blue/10 rounded-2xl blur-2xl"></div>
+              
               <svg class="relative w-20 h-20 text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
                 <path d="M12 2a7 7 0 017 7c0 3-2 5.5-4 7l-1 1.5a2 2 0 01-4 0L9 16c-2-1.5-4-4-4-7a7 7 0 017-7z" />
                 <circle cx="12" cy="9" r="2" />
@@ -223,13 +217,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <!-- Phase 02: Systems Buildout -->
         <div class="relative grid md:grid-cols-2 gap-8 md:gap-16 items-center mb-20">
           <!-- Connector Dot -->
-          <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-5 h-5 rounded-full bg-blue shadow-btn-glow items-center justify-center">
+          <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-5 h-5 rounded-full bg-blue  items-center justify-center">
             <div class="w-2 h-2 rounded-full bg-white"></div>
           </div>
           <!-- Icon (left) -->
           <div class="flex justify-center md:pr-12">
             <div class="relative w-32 h-32 flex items-center justify-center">
-              <div class="absolute inset-0 bg-blue/10 rounded-2xl blur-2xl"></div>
+              
               <svg class="relative w-20 h-20 text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
                 <circle cx="12" cy="12" r="3" />
                 <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke-linecap="round" />
@@ -244,7 +238,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <p class="font-jakarta text-base leading-relaxed mb-6" style="color:#94A3B8;">
               We build the entire back-end machine: CRM pipelines, automated follow-up sequences, call scripts, objection-handling frameworks, and SOPs for every stage of your sales process. Nothing is left to chance.
             </p>
-            <div class="rounded-lg border border-blue/30 bg-blue/5 p-4">
+            <div class="rounded-none border border-[#1F2937] bg-[#0A0A0A] p-4">
               <span class="font-chivo font-bold text-xs tracking-widest uppercase text-blue block mb-1">The Goal</span>
               <p class="font-jakarta text-sm leading-relaxed" style="color:#94A3B8;">A turnkey sales machine with documented processes that any A-player can plug into and start closing.</p>
             </div>
@@ -254,7 +248,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <!-- Phase 03: Installing Setters & Closers -->
         <div class="relative grid md:grid-cols-2 gap-8 md:gap-16 items-center mb-20">
           <!-- Connector Dot -->
-          <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-5 h-5 rounded-full bg-blue shadow-btn-glow items-center justify-center">
+          <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-5 h-5 rounded-full bg-blue  items-center justify-center">
             <div class="w-2 h-2 rounded-full bg-white"></div>
           </div>
           <!-- Text (left) -->
@@ -264,7 +258,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <p class="font-jakarta text-base leading-relaxed mb-6" style="color:#94A3B8;">
               We source, vet, and place top 1% sales talent into your business. Every rep goes through our proprietary screening process, role-play evaluations, and onboarding training before they ever touch a lead.
             </p>
-            <div class="rounded-lg border border-blue/30 bg-blue/5 p-4">
+            <div class="rounded-none border border-[#1F2937] bg-[#0A0A0A] p-4">
               <span class="font-chivo font-bold text-xs tracking-widest uppercase text-blue block mb-1">The Goal</span>
               <p class="font-jakarta text-sm leading-relaxed" style="color:#94A3B8;">Battle-tested closers installed and trained on your specific offer, ready to convert on day one.</p>
             </div>
@@ -272,7 +266,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <!-- Icon (right) -->
           <div class="flex justify-center md:pl-12 order-first md:order-last">
             <div class="relative w-32 h-32 flex items-center justify-center">
-              <div class="absolute inset-0 bg-blue/10 rounded-2xl blur-2xl"></div>
+              
               <svg class="relative w-20 h-20 text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
                 <circle cx="9" cy="7" r="3" />
                 <circle cx="17" cy="7" r="3" />
@@ -287,13 +281,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <!-- Phase 04: Revenue Orchestration -->
         <div class="relative grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           <!-- Connector Dot -->
-          <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-5 h-5 rounded-full bg-blue shadow-btn-glow items-center justify-center">
+          <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-5 h-5 rounded-full bg-blue  items-center justify-center">
             <div class="w-2 h-2 rounded-full bg-white"></div>
           </div>
           <!-- Icon (left) -->
           <div class="flex justify-center md:pr-12">
             <div class="relative w-32 h-32 flex items-center justify-center">
-              <div class="absolute inset-0 bg-blue/10 rounded-2xl blur-2xl"></div>
+              
               <svg class="relative w-20 h-20 text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
                 <path d="M3 3v18h18" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M7 16l4-5 4 3 5-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
@@ -308,7 +302,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <p class="font-jakarta text-base leading-relaxed mb-6" style="color:#94A3B8;">
               We act as your fractional VP of Sales — running daily huddles, reviewing call recordings, coaching reps, and optimizing every metric. Pipeline velocity, conversion rates, and cash collected are monitored in real time.
             </p>
-            <div class="rounded-lg border border-blue/30 bg-blue/5 p-4">
+            <div class="rounded-none border border-[#1F2937] bg-[#0A0A0A] p-4">
               <span class="font-chivo font-bold text-xs tracking-widest uppercase text-blue block mb-1">The Goal</span>
               <p class="font-jakarta text-sm leading-relaxed" style="color:#94A3B8;">A self-improving sales engine that scales revenue month-over-month without you managing a single rep.</p>
             </div>
@@ -318,7 +312,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
       <!-- CTA -->
       <div class="text-center mt-20">
-        <a href="#apply" class="group inline-flex items-center gap-2 bg-blue hover:bg-blue-hover text-white font-chivo font-bold text-sm md:text-base tracking-[0.08em] uppercase px-12 py-4 rounded-md transition-all duration-300 shadow-btn-glow hover:shadow-btn-glow-hover hover:-translate-y-0.5">
+        <a href="#apply" class="group inline-flex items-center gap-2 bg-[#003BE0] hover:bg-[#0044FF] text-white font-chivo font-bold text-sm md:text-base tracking-[0.08em] uppercase px-12 py-4 rounded-md transition-all duration-300  hover: ">
           Apply For This Infrastructure
           <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </a>
@@ -327,7 +321,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   </section>
 
   <!-- ========== WALL OF PROOF ========== -->
-  <section class="bg-base py-24 relative overflow-hidden">
+  <section class="bg-[#050505] py-24 relative overflow-hidden">
     <div class="max-w-6xl mx-auto px-6">
       <!-- Header -->
       <div class="text-center mb-16">
@@ -341,64 +335,64 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <div class="relative">
         <div class="columns-1 md:columns-2 gap-6 space-y-6">
           <!-- Proof Item 1 -->
-          <div class="break-inside-avoid rounded-2xl bg-card border border-card-border p-6 overflow-hidden">
-            <img src="https://placehold.co/600x400/1E293B/003be0?text=Proof+1" alt="Results proof 1" class="w-full rounded-lg mb-4" width="600" height="400" loading="lazy" />
+          <div class="break-inside-avoid rounded-none bg-[#0A0A0A] border border-[#1F2937] p-6 overflow-hidden">
+            <img src="https://placehold.co/600x400/1E293B/003be0?text=Proof+1" alt="Results proof 1" class="w-full rounded-none mb-4" width="600" height="400" loading="lazy" />
             <p class="font-chivo font-bold text-sm uppercase text-blue">+$247k in 60 Days</p>
           </div>
           <!-- Proof Item 2 -->
-          <div class="break-inside-avoid rounded-2xl bg-card border border-card-border p-6 overflow-hidden">
-            <img src="https://placehold.co/600x300/1E293B/003be0?text=Proof+2" alt="Results proof 2" class="w-full rounded-lg mb-4" width="600" height="300" loading="lazy" />
+          <div class="break-inside-avoid rounded-none bg-[#0A0A0A] border border-[#1F2937] p-6 overflow-hidden">
+            <img src="https://placehold.co/600x300/1E293B/003be0?text=Proof+2" alt="Results proof 2" class="w-full rounded-none mb-4" width="600" height="300" loading="lazy" />
             <p class="font-chivo font-bold text-sm uppercase text-blue">Close Rate: 12% → 31%</p>
           </div>
           <!-- Proof Item 3 -->
-          <div class="break-inside-avoid rounded-2xl bg-card border border-card-border p-6 overflow-hidden">
-            <img src="https://placehold.co/600x500/1E293B/003be0?text=Proof+3" alt="Results proof 3" class="w-full rounded-lg mb-4" width="600" height="500" loading="lazy" />
+          <div class="break-inside-avoid rounded-none bg-[#0A0A0A] border border-[#1F2937] p-6 overflow-hidden">
+            <img src="https://placehold.co/600x500/1E293B/003be0?text=Proof+3" alt="Results proof 3" class="w-full rounded-none mb-4" width="600" height="500" loading="lazy" />
             <p class="font-chivo font-bold text-sm uppercase text-blue">Scaled to 8-Figure Run Rate</p>
           </div>
           <!-- Proof Item 4 -->
-          <div class="break-inside-avoid rounded-2xl bg-card border border-card-border p-6 overflow-hidden">
-            <img src="https://placehold.co/600x350/1E293B/003be0?text=Proof+4" alt="Results proof 4" class="w-full rounded-lg mb-4" width="600" height="350" loading="lazy" />
+          <div class="break-inside-avoid rounded-none bg-[#0A0A0A] border border-[#1F2937] p-6 overflow-hidden">
+            <img src="https://placehold.co/600x350/1E293B/003be0?text=Proof+4" alt="Results proof 4" class="w-full rounded-none mb-4" width="600" height="350" loading="lazy" />
             <p class="font-chivo font-bold text-sm uppercase text-blue">3 Closers Placed in 14 Days</p>
           </div>
           <!-- Proof Item 5 -->
-          <div class="break-inside-avoid rounded-2xl bg-card border border-card-border p-6 overflow-hidden">
-            <img src="https://placehold.co/600x280/1E293B/003be0?text=Proof+5" alt="Results proof 5" class="w-full rounded-lg mb-4" width="600" height="280" loading="lazy" />
+          <div class="break-inside-avoid rounded-none bg-[#0A0A0A] border border-[#1F2937] p-6 overflow-hidden">
+            <img src="https://placehold.co/600x280/1E293B/003be0?text=Proof+5" alt="Results proof 5" class="w-full rounded-none mb-4" width="600" height="280" loading="lazy" />
             <p class="font-chivo font-bold text-sm uppercase text-blue">$0 → $180k MRR</p>
           </div>
           <!-- Proof Item 6 -->
-          <div class="break-inside-avoid rounded-2xl bg-card border border-card-border p-6 overflow-hidden">
-            <img src="https://placehold.co/600x450/1E293B/003be0?text=Proof+6" alt="Results proof 6" class="w-full rounded-lg mb-4" width="600" height="450" loading="lazy" />
+          <div class="break-inside-avoid rounded-none bg-[#0A0A0A] border border-[#1F2937] p-6 overflow-hidden">
+            <img src="https://placehold.co/600x450/1E293B/003be0?text=Proof+6" alt="Results proof 6" class="w-full rounded-none mb-4" width="600" height="450" loading="lazy" />
             <p class="font-chivo font-bold text-sm uppercase text-blue">Revenue Doubled in Q1</p>
           </div>
           <!-- Proof Item 7 -->
-          <div class="break-inside-avoid rounded-2xl bg-card border border-card-border p-6 overflow-hidden">
-            <img src="https://placehold.co/600x320/1E293B/003be0?text=Proof+7" alt="Results proof 7" class="w-full rounded-lg mb-4" width="600" height="320" loading="lazy" />
+          <div class="break-inside-avoid rounded-none bg-[#0A0A0A] border border-[#1F2937] p-6 overflow-hidden">
+            <img src="https://placehold.co/600x320/1E293B/003be0?text=Proof+7" alt="Results proof 7" class="w-full rounded-none mb-4" width="600" height="320" loading="lazy" />
             <p class="font-chivo font-bold text-sm uppercase text-blue">Saved 20+ Hrs/Week</p>
           </div>
           <!-- Proof Item 8 -->
-          <div class="break-inside-avoid rounded-2xl bg-card border border-card-border p-6 overflow-hidden">
-            <img src="https://placehold.co/600x380/1E293B/003be0?text=Proof+8" alt="Results proof 8" class="w-full rounded-lg mb-4" width="600" height="380" loading="lazy" />
+          <div class="break-inside-avoid rounded-none bg-[#0A0A0A] border border-[#1F2937] p-6 overflow-hidden">
+            <img src="https://placehold.co/600x380/1E293B/003be0?text=Proof+8" alt="Results proof 8" class="w-full rounded-none mb-4" width="600" height="380" loading="lazy" />
             <p class="font-chivo font-bold text-sm uppercase text-blue">Pipeline: $0 → $2.1M</p>
           </div>
           <!-- Proof Item 9 -->
-          <div class="break-inside-avoid rounded-2xl bg-card border border-card-border p-6 overflow-hidden">
-            <img src="https://placehold.co/600x420/1E293B/003be0?text=Proof+9" alt="Results proof 9" class="w-full rounded-lg mb-4" width="600" height="420" loading="lazy" />
+          <div class="break-inside-avoid rounded-none bg-[#0A0A0A] border border-[#1F2937] p-6 overflow-hidden">
+            <img src="https://placehold.co/600x420/1E293B/003be0?text=Proof+9" alt="Results proof 9" class="w-full rounded-none mb-4" width="600" height="420" loading="lazy" />
             <p class="font-chivo font-bold text-sm uppercase text-blue">Outbound → 47 Booked Calls/Week</p>
           </div>
           <!-- Proof Item 10 -->
-          <div class="break-inside-avoid rounded-2xl bg-card border border-card-border p-6 overflow-hidden">
-            <img src="https://placehold.co/600x340/1E293B/003be0?text=Proof+10" alt="Results proof 10" class="w-full rounded-lg mb-4" width="600" height="340" loading="lazy" />
+          <div class="break-inside-avoid rounded-none bg-[#0A0A0A] border border-[#1F2937] p-6 overflow-hidden">
+            <img src="https://placehold.co/600x340/1E293B/003be0?text=Proof+10" alt="Results proof 10" class="w-full rounded-none mb-4" width="600" height="340" loading="lazy" />
             <p class="font-chivo font-bold text-sm uppercase text-blue">5 Reps Managed, Zero Headaches</p>
           </div>
         </div>
 
         <!-- Gradient Fade at Bottom -->
-        <div class="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-base to-transparent pointer-events-none z-10"></div>
+        <div class="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none z-10"></div>
       </div>
 
       <!-- CTA -->
       <div class="relative z-20 text-center mt-12">
-        <a href="#apply" class="group inline-flex items-center gap-2 bg-blue hover:bg-blue-hover text-white font-chivo font-bold text-sm md:text-base tracking-[0.08em] uppercase px-12 py-4 rounded-md transition-all duration-300 shadow-btn-glow hover:shadow-btn-glow-hover hover:-translate-y-0.5">
+        <a href="#apply" class="group inline-flex items-center gap-2 bg-[#003BE0] hover:bg-[#0044FF] text-white font-chivo font-bold text-sm md:text-base tracking-[0.08em] uppercase px-12 py-4 rounded-md transition-all duration-300  hover: ">
           I Want Results Like This
           <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </a>
@@ -434,16 +428,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 </script>
 
 <style is:global>
-  /* Tech Grid Background */
-  .bg-grid-service {
-    background-size: 40px 40px;
-    background-image:
-      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    mask-image: radial-gradient(circle at center 30%, black 20%, transparent 80%);
-    -webkit-mask-image: radial-gradient(circle at center 30%, black 20%, transparent 80%);
-  }
-
   .scroll-animate {
     opacity: 0;
     transform: translateY(24px);
